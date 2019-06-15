@@ -26,7 +26,7 @@ struct Constants {
     
     struct Color {
         
-        static let primaryColor = "FF2F56"
+        static let primaryColor = "000000"
         static let secondaryColor = "323638"
         
     }

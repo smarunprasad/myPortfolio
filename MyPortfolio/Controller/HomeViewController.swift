@@ -38,11 +38,13 @@ class HomeViewController: UIViewController {
     
     func setUpModel() {
 
-        
+        self.view.showLoadingIndicator()
         homeViewModel = HomeViewModel.init()
         homeViewModel.reloadDataBlock = {
             
             self.homeDataSource.professionalSummery = self.homeViewModel.professioinalContant.ProfessionalSummery ?? ProfessionalSummery()
+            self.view.hideLoadingIndicator()
+
             DispatchQueue.main.async {
                 
                 self.tableView.reloadData()
