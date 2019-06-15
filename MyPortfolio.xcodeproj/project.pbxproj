@@ -12,6 +12,11 @@
 		F4037A7522B44397000BD673 /* SkillsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4037A7422B44397000BD673 /* SkillsViewModel.swift */; };
 		F4037A7722B443A3000BD673 /* ProjectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4037A7622B443A3000BD673 /* ProjectViewModel.swift */; };
 		F4037A7922B44412000BD673 /* EducationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4037A7822B44412000BD673 /* EducationViewModel.swift */; };
+		F4037A7C22B45D53000BD673 /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4037A7B22B45D53000BD673 /* APIConstants.swift */; };
+		F4037A7E22B45E86000BD673 /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4037A7D22B45E86000BD673 /* APIRouter.swift */; };
+		F4037A8122B46443000BD673 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4037A8022B46443000BD673 /* APIClient.swift */; };
+		F4037A8322B4692F000BD673 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4037A8222B4692F000BD673 /* APIManager.swift */; };
+		F4037A8522B469FD000BD673 /* ProfessionalSummeryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4037A8422B469FD000BD673 /* ProfessionalSummeryModel.swift */; };
 		F4F829BA22B402D7008B5999 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F829B922B402D7008B5999 /* AppDelegate.swift */; };
 		F4F829C122B402D7008B5999 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4F829BF22B402D7008B5999 /* Main.storyboard */; };
 		F4F829C322B402D8008B5999 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4F829C222B402D8008B5999 /* Assets.xcassets */; };
@@ -47,6 +52,11 @@
 		F4037A7422B44397000BD673 /* SkillsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillsViewModel.swift; sourceTree = "<group>"; };
 		F4037A7622B443A3000BD673 /* ProjectViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectViewModel.swift; sourceTree = "<group>"; };
 		F4037A7822B44412000BD673 /* EducationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EducationViewModel.swift; sourceTree = "<group>"; };
+		F4037A7B22B45D53000BD673 /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
+		F4037A7D22B45E86000BD673 /* APIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
+		F4037A8022B46443000BD673 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		F4037A8222B4692F000BD673 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		F4037A8422B469FD000BD673 /* ProfessionalSummeryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfessionalSummeryModel.swift; sourceTree = "<group>"; };
 		F4F829B622B402D7008B5999 /* MyPortfolio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyPortfolio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4F829B922B402D7008B5999 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4F829C022B402D7008B5999 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -88,6 +98,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F4037A7A22B45D39000BD673 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				F4037A7B22B45D53000BD673 /* APIConstants.swift */,
+				F4037A7D22B45E86000BD673 /* APIRouter.swift */,
+				F4037A8022B46443000BD673 /* APIClient.swift */,
+				F4037A8222B4692F000BD673 /* APIManager.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
 		F4F829AD22B402D7008B5999 = {
 			isa = PBXGroup;
 			children = (
@@ -109,6 +130,7 @@
 		F4F829B822B402D7008B5999 /* MyPortfolio */ = {
 			isa = PBXGroup;
 			children = (
+				F4037A7A22B45D39000BD673 /* API */,
 				F4F829E922B402F6008B5999 /* Launch Delegate */,
 				F4F829DC22B402F5008B5999 /* Constants */,
 				F4F829E822B402F5008B5999 /* Controller */,
@@ -181,6 +203,7 @@
 		F4F829E422B402F5008B5999 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F4037A8422B469FD000BD673 /* ProfessionalSummeryModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -342,11 +365,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4F829F522B4069D008B5999 /* ExperienceViewController.swift in Sources */,
+				F4037A7E22B45E86000BD673 /* APIRouter.swift in Sources */,
 				F4F829FF22B40AD9008B5999 /* UIImageView.swift in Sources */,
+				F4037A7C22B45D53000BD673 /* APIConstants.swift in Sources */,
+				F4037A8322B4692F000BD673 /* APIManager.swift in Sources */,
 				F4F82A0222B40B0B008B5999 /* String.swift in Sources */,
+				F4037A8522B469FD000BD673 /* ProfessionalSummeryModel.swift in Sources */,
 				F4F829F722B406B7008B5999 /* ProjectsViewController.swift in Sources */,
 				F4F82A0622B40BF9008B5999 /* UIView.swift in Sources */,
 				F4037A7922B44412000BD673 /* EducationViewModel.swift in Sources */,
+				F4037A8122B46443000BD673 /* APIClient.swift in Sources */,
 				F4F829FB22B4070C008B5999 /* EducationViewController.swift in Sources */,
 				F4F829BA22B402D7008B5999 /* AppDelegate.swift in Sources */,
 				F4F829F122B40582008B5999 /* Constants.swift in Sources */,
