@@ -14,9 +14,9 @@ var spinner : UIView?
 extension UIView {
     
     //MARK - View
-    func roundCorner(radius: Float, borderColor color: UIColor) {
+    func roundCorner(radius: CGFloat, borderColor color: UIColor) {
         
-        layer.cornerRadius = CGFloat(radius)
+        layer.cornerRadius = radius
         layer.borderWidth = 1
         layer.borderColor = color.cgColor
         clipsToBounds = true
@@ -40,7 +40,7 @@ extension UIView {
         spinner = spinnerView
     }
     
-    func removeLoadingIndicator() {
+    func hideLoadingIndicator() {
         
         DispatchQueue.main.async {
             spinner?.removeFromSuperview()

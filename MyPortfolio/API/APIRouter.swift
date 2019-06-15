@@ -19,7 +19,7 @@ enum HttpMethode: String {
 
 enum APIRouter {
     
-    case getProfessionalSummeryData()
+    case getProfessionalSummeryData
 }
 
 extension APIRouter {

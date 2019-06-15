@@ -39,8 +39,8 @@ final class APIManager {
     }
     
     @discardableResult
-    static func getProfessionalSummeryData( completionBlock: @escaping (Bool, Result<ProfessionalSummeryModel, HDError>) -> Void) -> URLSessionDataTask {
+    static func getProfessionalSummeryData( completionBlock: @escaping (Bool, Result<ProfessionalContent, HDError>) -> Void) -> URLSessionDataTask {
         
-        return APIClient.shared.dataRequest(router: .getProfessionalSummeryData(), completionBlock: completionBlock)
+        return APIClient.shared.dataRequest(router: .getProfessionalSummeryData, completionBlock: completionBlock)
     }
 }

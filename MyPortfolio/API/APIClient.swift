@@ -19,19 +19,44 @@ final class APIClient {
             
             guard let data = data else {
                 completionBlock (false, Result.failure(HDError.clientSideError))
+                return
             }
             
             do {
+                // make sure this JSON is in the format we expect
+                let glist = try JSONSerialization.jsonObject(with: data, options: [])
+                let jsonData = try JSONSerialization.data(withJSONObject: glist, options: [])
                 
-                let json = try JSONDecoder().decode(M.self, from: data)
-                completionBlock (true, Result.success(json))
+                // It is checked to convert the content key value from string to model file
+                if M.self == ProfessionalContent.self {
+                    
+                    convertJsonDataToModelBasedOnTheType(jsonData: jsonData, completionBlock: completionBlock)
+                    
+                }
+            } catch let error as NSError {
+                print("Failed to load: \(error.localizedDescription)")
             }
-            catch {
-                
-                completionBlock (false, Result.failure(HDError.serverSideError))
-            }
+            
         }
         dataTask.resume()
         return dataTask
+    }
+}
+
+
+func convertJsonDataToModelBasedOnTheType<M: Codable>(jsonData: Data, completionBlock: @escaping (_ success: Bool, _ result: Result<M,HDError>) -> Void) {
+    
+    do {
+        let json = try JSONDecoder().decode(ProfessionalSummeryModel.self, from: jsonData)
+        
+        if let aProfissionData = json.ProfessionalSummeryfiles?.professional?.content?.data(using: .utf8) {
+            
+            let json = try JSONDecoder().decode(M.self, from: aProfissionData)
+            completionBlock (true, Result.success(json))
+        }
+    }
+    catch {
+        
+        completionBlock (false, Result.failure(HDError.serverSideError))
     }
 }

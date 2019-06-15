@@ -8,32 +8,59 @@
 
 import Foundation
 
+//MARK: To split the data from the Response
 struct ProfessionalSummeryModel: Codable {
     
-    let ProfesionalSummery : ProfesionalSummery!
+    var ProfessionalSummeryfiles: ProfessionalSummeryfiles?
     
     enum CodingKeys: String, CodingKey {
-        case ProfesionalSummery = "Profesional_Summery"
+        case ProfessionalSummeryfiles = "files"
     }
 }
 
-struct ProfesionalSummery: Codable {
+struct ProfessionalSummeryfiles: Codable {
     
-    let name: String!
-    let summery: String!
-    let current_company: String!
-    let status: String!
-    let profile_picture: String!
-    let background_picture: String!
-    let last_updated_on: String!
-    let career_interest: Bool!
-    let mobile_number: String!
-    let salary: [salary]!
+    var professional: Professional?
+    
+    
+    enum CodingKeys: String, CodingKey {
+        case professional = "professional_summery"
+    }
 }
 
-struct salary: Codable {
+struct Professional: Codable {
     
-    let type: String!
-    let rate: Int!
-    let sponsor: Bool!
+    var content: String?
+}
+
+
+struct ProfessionalContent: Codable {
+    
+    var ProfessionalSummery : ProfessionalSummery?
+
+    enum CodingKeys: String, CodingKey {
+        case ProfessionalSummery = "Professional_Summery"
+    }
+}
+
+//MARK: To load data in table view
+struct ProfessionalSummery: Codable {
+    
+    var name: String!
+    var summery: String!
+    var describtion: String!
+    var current_company: String!
+    var status: String!
+    var profile_picture: String!
+    var background_picture: String!
+    var last_updated_on: String!
+    var mobile_number: String!
+    var salary: [Salary]!
+}
+
+struct Salary: Codable {
+    
+    var type: String!
+    var rate: Int!
+    var sponsor: Bool!
 }

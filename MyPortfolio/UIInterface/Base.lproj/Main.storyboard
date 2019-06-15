@@ -56,10 +56,28 @@
                     <view key="view" contentMode="scaleToFill" id="JTG-uv-qHp">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MeH-CE-0DF">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="delegate" destination="gyb-DA-Seb" id="9qC-h8-nMt"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="MeH-CE-0DF" firstAttribute="top" secondItem="FAG-dC-CmI" secondAttribute="top" id="5T5-1h-55Y"/>
+                            <constraint firstItem="MeH-CE-0DF" firstAttribute="leading" secondItem="FAG-dC-CmI" secondAttribute="leading" id="Os6-Bg-WWs"/>
+                            <constraint firstItem="FAG-dC-CmI" firstAttribute="trailing" secondItem="MeH-CE-0DF" secondAttribute="trailing" id="bat-8o-YIb"/>
+                            <constraint firstItem="FAG-dC-CmI" firstAttribute="bottom" secondItem="MeH-CE-0DF" secondAttribute="bottom" id="pR7-VN-hOc"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="FAG-dC-CmI"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="home" springLoaded="YES" id="pCf-U7-MKK"/>
+                    <connections>
+                        <outlet property="tableView" destination="MeH-CE-0DF" id="blF-Ai-hrW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oLZ-xu-qEH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

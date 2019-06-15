@@ -33,7 +33,7 @@ struct Constants {
     
     struct image {
         
-        static let detailPlaceholder = "icon_no_image"
+        static let no_profile_image = "icon_no_image"
     }
     struct userDefaults {
         

@@ -12,7 +12,7 @@ import UIKit
 extension UIImageView {
     
     // By using this methode we can download the image from url
-    func download(urlString: String, placholderImage: UIImage = UIImage(), completionBlock: @escaping (_ isSuccess: Bool) -> Void) {
+    func download(urlString: String, placholderImage: UIImage = UIImage(), completionBlock: ((_ isSuccess: Bool) -> Void)? = nil) {
         
         guard let url = URL(string: urlString) else { return }
         let session = URLSession(configuration: .default)
@@ -24,7 +24,7 @@ extension UIImageView {
                 
                 DispatchQueue.main.async() {
                     self.image = placholderImage
-                    completionBlock(false)
+                    completionBlock?(false)
                 }
                 print("Error downloading cat picture: \(e)")
             }
@@ -39,7 +39,7 @@ extension UIImageView {
                         let image = UIImage(data: imageData)
                         DispatchQueue.main.async() {
                             self.image = image
-                            completionBlock(true)
+                            completionBlock?(true)
                         }
                         return
                     }
@@ -47,7 +47,7 @@ extension UIImageView {
                 
                 DispatchQueue.main.async() {
                     self.image = placholderImage
-                    completionBlock(false)
+                    completionBlock?(false)
                 }
                 print("Couldn't get response code for some reason")
             }

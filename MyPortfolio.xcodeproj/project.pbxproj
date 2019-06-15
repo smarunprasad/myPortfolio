@@ -17,6 +17,13 @@
 		F4037A8122B46443000BD673 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4037A8022B46443000BD673 /* APIClient.swift */; };
 		F4037A8322B4692F000BD673 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4037A8222B4692F000BD673 /* APIManager.swift */; };
 		F4037A8522B469FD000BD673 /* ProfessionalSummeryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4037A8422B469FD000BD673 /* ProfessionalSummeryModel.swift */; };
+		F4037A8722B51701000BD673 /* HomrDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4037A8622B51701000BD673 /* HomrDataSource.swift */; };
+		F4037A8C22B51CB0000BD673 /* ProfessionalHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4037A8A22B51CB0000BD673 /* ProfessionalHeaderTableViewCell.swift */; };
+		F4037A8D22B51CB0000BD673 /* ProfessionalHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4037A8B22B51CB0000BD673 /* ProfessionalHeaderTableViewCell.xib */; };
+		F4037A9122B5371D000BD673 /* SalaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4037A8F22B5371D000BD673 /* SalaryTableViewCell.swift */; };
+		F4037A9222B5371E000BD673 /* SalaryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4037A9022B5371D000BD673 /* SalaryTableViewCell.xib */; };
+		F41BC30022B5AD680051090E /* ExperienceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41BC2FE22B5AD680051090E /* ExperienceTableViewCell.swift */; };
+		F41BC30122B5AD680051090E /* ExperienceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F41BC2FF22B5AD680051090E /* ExperienceTableViewCell.xib */; };
 		F4F829BA22B402D7008B5999 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F829B922B402D7008B5999 /* AppDelegate.swift */; };
 		F4F829C122B402D7008B5999 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4F829BF22B402D7008B5999 /* Main.storyboard */; };
 		F4F829C322B402D8008B5999 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4F829C222B402D8008B5999 /* Assets.xcassets */; };
@@ -57,6 +64,13 @@
 		F4037A8022B46443000BD673 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		F4037A8222B4692F000BD673 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		F4037A8422B469FD000BD673 /* ProfessionalSummeryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfessionalSummeryModel.swift; sourceTree = "<group>"; };
+		F4037A8622B51701000BD673 /* HomrDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomrDataSource.swift; sourceTree = "<group>"; };
+		F4037A8A22B51CB0000BD673 /* ProfessionalHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfessionalHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		F4037A8B22B51CB0000BD673 /* ProfessionalHeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfessionalHeaderTableViewCell.xib; sourceTree = "<group>"; };
+		F4037A8F22B5371D000BD673 /* SalaryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalaryTableViewCell.swift; sourceTree = "<group>"; };
+		F4037A9022B5371D000BD673 /* SalaryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SalaryTableViewCell.xib; sourceTree = "<group>"; };
+		F41BC2FE22B5AD680051090E /* ExperienceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceTableViewCell.swift; sourceTree = "<group>"; };
+		F41BC2FF22B5AD680051090E /* ExperienceTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExperienceTableViewCell.xib; sourceTree = "<group>"; };
 		F4F829B622B402D7008B5999 /* MyPortfolio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyPortfolio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4F829B922B402D7008B5999 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4F829C022B402D7008B5999 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -107,6 +121,42 @@
 				F4037A8222B4692F000BD673 /* APIManager.swift */,
 			);
 			path = API;
+			sourceTree = "<group>";
+		};
+		F4037A8822B51C78000BD673 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				F4037A8E22B53592000BD673 /* Salary */,
+				F4037A8922B51C7F000BD673 /* Professional Header */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		F4037A8922B51C7F000BD673 /* Professional Header */ = {
+			isa = PBXGroup;
+			children = (
+				F4037A8A22B51CB0000BD673 /* ProfessionalHeaderTableViewCell.swift */,
+				F4037A8B22B51CB0000BD673 /* ProfessionalHeaderTableViewCell.xib */,
+			);
+			path = "Professional Header";
+			sourceTree = "<group>";
+		};
+		F4037A8E22B53592000BD673 /* Salary */ = {
+			isa = PBXGroup;
+			children = (
+				F4037A8F22B5371D000BD673 /* SalaryTableViewCell.swift */,
+				F4037A9022B5371D000BD673 /* SalaryTableViewCell.xib */,
+			);
+			path = Salary;
+			sourceTree = "<group>";
+		};
+		F41BC2FD22B5AD530051090E /* Experience */ = {
+			isa = PBXGroup;
+			children = (
+				F41BC2FE22B5AD680051090E /* ExperienceTableViewCell.swift */,
+				F41BC2FF22B5AD680051090E /* ExperienceTableViewCell.xib */,
+			);
+			path = Experience;
 			sourceTree = "<group>";
 		};
 		F4F829AD22B402D7008B5999 = {
@@ -219,6 +269,7 @@
 		F4F829E622B402F5008B5999 /* DataSource */ = {
 			isa = PBXGroup;
 			children = (
+				F4037A8622B51701000BD673 /* HomrDataSource.swift */,
 			);
 			path = DataSource;
 			sourceTree = "<group>";
@@ -259,6 +310,8 @@
 		F4F82A0922B40CE3008B5999 /* TableViewCell */ = {
 			isa = PBXGroup;
 			children = (
+				F41BC2FD22B5AD530051090E /* Experience */,
+				F4037A8822B51C78000BD673 /* Home */,
 			);
 			path = TableViewCell;
 			sourceTree = "<group>";
@@ -344,7 +397,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4037A9222B5371E000BD673 /* SalaryTableViewCell.xib in Resources */,
+				F41BC30122B5AD680051090E /* ExperienceTableViewCell.xib in Resources */,
 				F4F829C622B402D8008B5999 /* LaunchScreen.storyboard in Resources */,
+				F4037A8D22B51CB0000BD673 /* ProfessionalHeaderTableViewCell.xib in Resources */,
 				F4F829C322B402D8008B5999 /* Assets.xcassets in Resources */,
 				F4F829C122B402D7008B5999 /* Main.storyboard in Resources */,
 			);
@@ -372,10 +428,13 @@
 				F4F82A0222B40B0B008B5999 /* String.swift in Sources */,
 				F4037A8522B469FD000BD673 /* ProfessionalSummeryModel.swift in Sources */,
 				F4F829F722B406B7008B5999 /* ProjectsViewController.swift in Sources */,
+				F4037A8722B51701000BD673 /* HomrDataSource.swift in Sources */,
 				F4F82A0622B40BF9008B5999 /* UIView.swift in Sources */,
 				F4037A7922B44412000BD673 /* EducationViewModel.swift in Sources */,
 				F4037A8122B46443000BD673 /* APIClient.swift in Sources */,
 				F4F829FB22B4070C008B5999 /* EducationViewController.swift in Sources */,
+				F4037A8C22B51CB0000BD673 /* ProfessionalHeaderTableViewCell.swift in Sources */,
+				F41BC30022B5AD680051090E /* ExperienceTableViewCell.swift in Sources */,
 				F4F829BA22B402D7008B5999 /* AppDelegate.swift in Sources */,
 				F4F829F122B40582008B5999 /* Constants.swift in Sources */,
 				F4F82A0822B40CBC008B5999 /* TimeInterval.swift in Sources */,
@@ -387,6 +446,7 @@
 				F4F829FD22B40820008B5999 /* UIViewController.swift in Sources */,
 				F4037A7522B44397000BD673 /* SkillsViewModel.swift in Sources */,
 				F4F829F322B40690008B5999 /* HomeViewController.swift in Sources */,
+				F4037A9122B5371D000BD673 /* SalaryTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
