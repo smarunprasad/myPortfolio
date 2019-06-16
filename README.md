@@ -11,7 +11,8 @@ This app allow the user to view my profile on iPhone
     Github
     GithubGist
 
-# This app contains Tab bar with items
+# This app contains 
+    TabBar ViewController
     Professiona summery
     Experience
     Skills
