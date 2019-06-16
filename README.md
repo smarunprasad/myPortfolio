@@ -13,7 +13,7 @@
 
 # This app contains 
     TabBar ViewController
-    Professional summary
+    Professional Summary
     Experience Summary
     Skills
     Projects
