@@ -57,4 +57,11 @@ final class APIManager {
     }
     
     
+    @discardableResult
+    static func getProjectsData( completionBlock: @escaping (Bool, Result<ProjectsContent, HDError>) -> Void) -> URLSessionDataTask {
+        
+        return APIClient.shared.dataRequest(router: .getProjectsData, completionBlock: completionBlock)
+    }
+    
+    
 }

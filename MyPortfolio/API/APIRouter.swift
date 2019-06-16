@@ -22,6 +22,7 @@ enum APIRouter {
     case getProfessionalSummeryData
     case getExperienceSummeryData
     case getSkillsData
+    case getProjectsData
 }
 
 extension APIRouter {
@@ -35,6 +36,8 @@ extension APIRouter {
             return URL.init(string:"\(GistUrl.baseUrl)\(GistUrl.experienceUrl)")!
         case .getSkillsData:
             return URL.init(string:"\(GistUrl.baseUrl)\(GistUrl.skillsUrl)")!
+        case .getProjectsData:
+            return URL.init(string:"\(GistUrl.baseUrl)\(GistUrl.projectsUrl)")!
             
         }
     }

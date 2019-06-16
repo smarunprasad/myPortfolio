@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="detailButton" indentationWidth="10" reuseIdentifier="ProjectsTableViewCell" rowHeight="80" id="KGk-i7-Jjw" customClass="ProjectsTableViewCell" customModule="MyPortfolio" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="272" height="79.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yco-8h-76Y">
+                        <rect key="frame" x="8" y="8" width="256" height="63.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Senior Mobile Developer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KuO-7D-QM1">
+                                <rect key="frame" x="8" y="0.0" width="240" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="KQx-EY-N5f"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tavistock Investments PLC" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zdi-wu-Om2">
+                                <rect key="frame" x="8" y="25" width="240" height="15"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="02 Jan, 2019  to 28 Mar, 2019" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qV1-cR-uza">
+                                <rect key="frame" x="8" y="44" width="240" height="13.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="13.5" id="7f8-cB-ggy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="KuO-7D-QM1" firstAttribute="top" secondItem="yco-8h-76Y" secondAttribute="top" id="EsR-WR-Ta5"/>
+                            <constraint firstAttribute="trailing" secondItem="qV1-cR-uza" secondAttribute="trailing" constant="8" id="LFc-2q-wU8"/>
+                            <constraint firstItem="qV1-cR-uza" firstAttribute="top" secondItem="zdi-wu-Om2" secondAttribute="bottom" constant="4" id="PLG-4W-pIW"/>
+                            <constraint firstItem="zdi-wu-Om2" firstAttribute="leading" secondItem="KuO-7D-QM1" secondAttribute="leading" id="Sdd-AH-5pa"/>
+                            <constraint firstItem="zdi-wu-Om2" firstAttribute="top" secondItem="KuO-7D-QM1" secondAttribute="bottom" constant="4" id="Zyu-Wr-GAr"/>
+                            <constraint firstAttribute="trailing" secondItem="zdi-wu-Om2" secondAttribute="trailing" constant="8" id="byZ-xh-UsR"/>
+                            <constraint firstItem="KuO-7D-QM1" firstAttribute="leading" secondItem="yco-8h-76Y" secondAttribute="leading" constant="8" id="iAk-eI-i4U"/>
+                            <constraint firstAttribute="bottom" secondItem="qV1-cR-uza" secondAttribute="bottom" constant="6" id="jvf-FL-0Xi"/>
+                            <constraint firstItem="qV1-cR-uza" firstAttribute="leading" secondItem="zdi-wu-Om2" secondAttribute="leading" id="kjl-lw-09n"/>
+                            <constraint firstAttribute="trailing" secondItem="KuO-7D-QM1" secondAttribute="trailing" constant="8" id="y3Q-G4-dL0"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="yco-8h-76Y" secondAttribute="bottom" constant="8" id="5if-af-uR4"/>
+                    <constraint firstItem="yco-8h-76Y" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="GaF-pG-2jV"/>
+                    <constraint firstItem="yco-8h-76Y" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="YFp-Op-FlZ"/>
+                    <constraint firstAttribute="trailing" secondItem="yco-8h-76Y" secondAttribute="trailing" constant="8" id="nOt-21-NUt"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="appNameLabel" destination="KuO-7D-QM1" id="4Df-xb-6ae"/>
+                <outlet property="companyNameLabel" destination="zdi-wu-Om2" id="sQg-t0-faw"/>
+                <outlet property="durationLabel" destination="qV1-cR-uza" id="GfF-vV-ik6"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="99.776785714285708"/>
+        </tableViewCell>
+    </objects>
+</document>

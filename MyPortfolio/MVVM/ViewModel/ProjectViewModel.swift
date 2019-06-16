@@ -7,3 +7,63 @@
 //
 
 import Foundation
+
+class ProjectViewModel {
+    
+    init() {
+        getDataFromService()
+    }
+    var reloadDataBlock: (() -> Void) = {
+        
+    }
+    
+    var alertDelegate: AlertDelegate?
+    var projectsContant: ProjectsContent!
+    
+    func getDataFromService() {
+        
+        self.projectsContant = ProjectsContent()
+        loadDatafromService { (_ model) in
+            
+            if model.projects != nil {
+                
+                self.projectsContant = model
+            }
+            self.reloadDataBlock()
+        }
+    }
+    
+    private func loadDatafromService(completionBlock: @escaping (ProjectsContent) -> Void) {
+        
+        if !(APIManager.isConnectedToNetwork()) {
+            
+            alertDelegate?.showOkButtonAlert(message: Constants.Message.noInternet)
+            self.reloadDataBlock()
+            return
+        }
+        
+        
+        APIManager.getProjectsData { (success, result) in
+            
+            switch result {
+            case .success(let response):
+                
+                if response.projects != nil {
+                    
+                    completionBlock(response)
+                }
+                else {
+                    
+                    completionBlock(ProjectsContent())
+                    self.alertDelegate?.showOkButtonAlert(message: Constants.Message.somethinWrong)
+                }
+                break
+            case .failure:
+                
+                completionBlock(ProjectsContent())
+                self.alertDelegate?.showOkButtonAlert(message: Constants.Message.somethinWrong)
+                break
+            }
+        }
+    }
+}
