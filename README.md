@@ -1,7 +1,7 @@
 # myPortfolio
-This app allow the user to view my profile on iPhone
+    This app allows the users to view profiles on iPhone
 
-# Specific techonologies:
+# Techonologies Used
 
     Xcode
     iOS
@@ -13,12 +13,12 @@ This app allow the user to view my profile on iPhone
 
 # This app contains 
     TabBar ViewController
-    Professiona summery
-    Experience
+    Professional summary
+    Experience Summary
     Skills
     Projects
-    Education & certificate
+    Education & certificates
    
-    This app support the dynamic font size 
+    This app support  dynamic font size 
     This is developed using MVVM architecture 
-    Test case is writen for ViewModel, Extensiond & API classes
+    Test case is writen for ViewModel, Extension, Datasource classes & API classes
