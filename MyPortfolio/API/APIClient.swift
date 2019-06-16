@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class APIClient {
+class APIClient {
     
     static let shared = APIClient()
     private let session = URLSession.shared
@@ -30,23 +30,23 @@ final class APIClient {
                 // It is checked to convert the content key value from string to model file
                 if M.self == ProfessionalContent.self {
                     
-                    convertProfessionalSummeryModelJsonDataToModelBasedOnTheType(jsonData: jsonData, completionBlock: completionBlock)
+                    self.convertProfessionalSummeryModelJsonDataToModelBasedOnTheType(jsonData: jsonData, completionBlock: completionBlock)
                 }
                 else if M.self == ExperienceContent.self {
                     
-                    convertExperienceSummeryModelJsonDataToModelBasedOnTheType(jsonData: jsonData, completionBlock: completionBlock)
+                    self.convertExperienceSummeryModelJsonDataToModelBasedOnTheType(jsonData: jsonData, completionBlock: completionBlock)
                 }
                 else if M.self == SkillsContent.self {
                     
-                    convertSkillsModelJsonDataToModelBasedOnTheType(jsonData: jsonData, completionBlock: completionBlock)
+                    self.convertSkillsModelJsonDataToModelBasedOnTheType(jsonData: jsonData, completionBlock: completionBlock)
                 }
                 else if M.self == ProjectsContent.self {
                     
-                    convertProjectsModelJsonDataToModelBasedOnTheType(jsonData: jsonData, completionBlock: completionBlock)
+                    self.convertProjectsModelJsonDataToModelBasedOnTheType(jsonData: jsonData, completionBlock: completionBlock)
                 }
                 else if M.self == EducationContent.self {
                     
-                    convertEducationModelJsonDataToModelBasedOnTheType(jsonData: jsonData, completionBlock: completionBlock)
+                    self.convertEducationModelJsonDataToModelBasedOnTheType(jsonData: jsonData, completionBlock: completionBlock)
                 }
                 
             } catch let error as NSError {
@@ -57,92 +57,91 @@ final class APIClient {
         dataTask.resume()
         return dataTask
     }
-}
-
-
-func convertProfessionalSummeryModelJsonDataToModelBasedOnTheType<M: Codable>(jsonData: Data, completionBlock: @escaping (_ success: Bool, _ result: Result<M,HDError>) -> Void) {
     
-    do {
-        let json = try JSONDecoder().decode(ProfessionalSummeryModel.self, from: jsonData)
+    func convertProfessionalSummeryModelJsonDataToModelBasedOnTheType<M: Codable>(jsonData: Data, completionBlock: @escaping (_ success: Bool, _ result: Result<M,HDError>) -> Void) {
         
-        if let aProfissionData = json.ProfessionalSummeryfiles?.professional?.content?.data(using: .utf8) {
+        do {
+            let json = try JSONDecoder().decode(ProfessionalSummeryModel.self, from: jsonData)
             
-            let json = try JSONDecoder().decode(M.self, from: aProfissionData)
-            completionBlock (true, Result.success(json))
+            if let aProfissionData = json.ProfessionalSummeryfiles?.professional?.content?.data(using: .utf8) {
+                
+                let json = try JSONDecoder().decode(M.self, from: aProfissionData)
+                completionBlock (true, Result.success(json))
+            }
+        }
+        catch {
+            
+            completionBlock (false, Result.failure(HDError.serverSideError))
         }
     }
-    catch {
-        
-        completionBlock (false, Result.failure(HDError.serverSideError))
-    }
-}
-
-func convertExperienceSummeryModelJsonDataToModelBasedOnTheType<M: Codable>(jsonData: Data, completionBlock: @escaping (_ success: Bool, _ result: Result<M,HDError>) -> Void) {
     
-    do {
-        let json = try JSONDecoder().decode(ExperienceSummeryModel.self, from: jsonData)
+    func convertExperienceSummeryModelJsonDataToModelBasedOnTheType<M: Codable>(jsonData: Data, completionBlock: @escaping (_ success: Bool, _ result: Result<M,HDError>) -> Void) {
         
-        if let aProfissionData = json.experienceSummeryfiles?.experience?.content?.data(using: .utf8) {
+        do {
+            let json = try JSONDecoder().decode(ExperienceSummeryModel.self, from: jsonData)
             
-            let json = try JSONDecoder().decode(M.self, from: aProfissionData)
-            completionBlock (true, Result.success(json))
+            if let aProfissionData = json.experienceSummeryfiles?.experience?.content?.data(using: .utf8) {
+                
+                let json = try JSONDecoder().decode(M.self, from: aProfissionData)
+                completionBlock (true, Result.success(json))
+            }
+        }
+        catch {
+            
+            completionBlock (false, Result.failure(HDError.serverSideError))
         }
     }
-    catch {
-        
-        completionBlock (false, Result.failure(HDError.serverSideError))
-    }
-}
-
-func convertSkillsModelJsonDataToModelBasedOnTheType<M: Codable>(jsonData: Data, completionBlock: @escaping (_ success: Bool, _ result: Result<M,HDError>) -> Void) {
     
-    do {
-        let json = try JSONDecoder().decode(SkillsModel.self, from: jsonData)
+    func convertSkillsModelJsonDataToModelBasedOnTheType<M: Codable>(jsonData: Data, completionBlock: @escaping (_ success: Bool, _ result: Result<M,HDError>) -> Void) {
         
-        if let aData = json.skillsfiles?.skills?.content?.data(using: .utf8) {
+        do {
+            let json = try JSONDecoder().decode(SkillsModel.self, from: jsonData)
             
-            let json = try JSONDecoder().decode(M.self, from: aData)
-            completionBlock (true, Result.success(json))
+            if let aData = json.skillsfiles?.skills?.content?.data(using: .utf8) {
+                
+                let json = try JSONDecoder().decode(M.self, from: aData)
+                completionBlock (true, Result.success(json))
+            }
+        }
+        catch {
+            
+            completionBlock (false, Result.failure(HDError.serverSideError))
         }
     }
-    catch {
-        
-        completionBlock (false, Result.failure(HDError.serverSideError))
-    }
-}
-
-
-func convertEducationModelJsonDataToModelBasedOnTheType<M: Codable>(jsonData: Data, completionBlock: @escaping (_ success: Bool, _ result: Result<M,HDError>) -> Void) {
     
-    do {
-        let json = try JSONDecoder().decode(EducationModel.self, from: jsonData)
+    
+    func convertEducationModelJsonDataToModelBasedOnTheType<M: Codable>(jsonData: Data, completionBlock: @escaping (_ success: Bool, _ result: Result<M,HDError>) -> Void) {
         
-        if let aData = json.educationfiles?.academy?.content?.data(using: .utf8) {
+        do {
+            let json = try JSONDecoder().decode(EducationModel.self, from: jsonData)
             
-            let json = try JSONDecoder().decode(M.self, from: aData)
-            completionBlock (true, Result.success(json))
+            if let aData = json.educationfiles?.academy?.content?.data(using: .utf8) {
+                
+                let json = try JSONDecoder().decode(M.self, from: aData)
+                completionBlock (true, Result.success(json))
+            }
+        }
+        catch {
+            
+            completionBlock (false, Result.failure(HDError.serverSideError))
         }
     }
-    catch {
-        
-        completionBlock (false, Result.failure(HDError.serverSideError))
-    }
-}
-
-
-func convertProjectsModelJsonDataToModelBasedOnTheType<M: Codable>(jsonData: Data, completionBlock: @escaping (_ success: Bool, _ result: Result<M,HDError>) -> Void) {
     
-    do {
-        let json = try JSONDecoder().decode(ProjectsModel.self, from: jsonData)
+    
+    func convertProjectsModelJsonDataToModelBasedOnTheType<M: Codable>(jsonData: Data, completionBlock: @escaping (_ success: Bool, _ result: Result<M,HDError>) -> Void) {
         
-        if let aData = json.projectsfiles?.projects?.content?.data(using: .utf8) {
+        do {
+            let json = try JSONDecoder().decode(ProjectsModel.self, from: jsonData)
             
-            let json = try JSONDecoder().decode(M.self, from: aData)
-            completionBlock (true, Result.success(json))
+            if let aData = json.projectsfiles?.projects?.content?.data(using: .utf8) {
+                
+                let json = try JSONDecoder().decode(M.self, from: aData)
+                completionBlock (true, Result.success(json))
+            }
         }
-    }
-    catch {
-        
-        completionBlock (false, Result.failure(HDError.serverSideError))
+        catch {
+            
+            completionBlock (false, Result.failure(HDError.serverSideError))
+        }
     }
 }

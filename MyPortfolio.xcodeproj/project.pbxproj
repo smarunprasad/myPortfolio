@@ -37,11 +37,21 @@
 		F41BC31822B5E8C00051090E /* ProjectsDetailDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41BC31722B5E8C00051090E /* ProjectsDetailDataSource.swift */; };
 		F41BC31A22B5F0B40051090E /* EducationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41BC31922B5F0B40051090E /* EducationModel.swift */; };
 		F41BC31C22B5F31F0051090E /* EducationDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41BC31B22B5F31F0051090E /* EducationDataSource.swift */; };
+		F41BC32322B65D0D0051090E /* APIManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41BC32222B65D0D0051090E /* APIManagerTest.swift */; };
+		F41BC32522B66FDD0051090E /* ImageViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41BC32422B66FDD0051090E /* ImageViewTest.swift */; };
+		F41BC32722B6700A0051090E /* ColorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41BC32622B6700A0051090E /* ColorTest.swift */; };
+		F41BC32922B670220051090E /* StringTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41BC32822B670220051090E /* StringTest.swift */; };
+		F41BC32B22B670320051090E /* ViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41BC32A22B670320051090E /* ViewTest.swift */; };
+		F41BC32D22B670510051090E /* ViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41BC32C22B670510051090E /* ViewControllerTest.swift */; };
+		F41BC32F22B6893E0051090E /* HomeViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41BC32E22B6893E0051090E /* HomeViewModelTest.swift */; };
+		F41BC33122B689590051090E /* ExperienceViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41BC33022B689590051090E /* ExperienceViewModelTest.swift */; };
+		F41BC33322B689690051090E /* SkillsViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41BC33222B689690051090E /* SkillsViewModelTest.swift */; };
+		F41BC33522B689770051090E /* ProjectsViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41BC33422B689770051090E /* ProjectsViewModelTest.swift */; };
+		F41BC33722B6899C0051090E /* EducationViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41BC33622B6899C0051090E /* EducationViewModelTest.swift */; };
 		F4F829BA22B402D7008B5999 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F829B922B402D7008B5999 /* AppDelegate.swift */; };
 		F4F829C122B402D7008B5999 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4F829BF22B402D7008B5999 /* Main.storyboard */; };
 		F4F829C322B402D8008B5999 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4F829C222B402D8008B5999 /* Assets.xcassets */; };
 		F4F829C622B402D8008B5999 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4F829C422B402D8008B5999 /* LaunchScreen.storyboard */; };
-		F4F829D122B402D8008B5999 /* MyPortfolioTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F829D022B402D8008B5999 /* MyPortfolioTests.swift */; };
 		F4F829F122B40582008B5999 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F829F022B40582008B5999 /* Constants.swift */; };
 		F4F829F322B40690008B5999 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F829F222B40690008B5999 /* HomeViewController.swift */; };
 		F4F829F522B4069D008B5999 /* ExperienceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F829F422B4069D008B5999 /* ExperienceViewController.swift */; };
@@ -53,7 +63,6 @@
 		F4F82A0222B40B0B008B5999 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F82A0122B40B0B008B5999 /* String.swift */; };
 		F4F82A0422B40B9B008B5999 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F82A0322B40B9B008B5999 /* UIColor.swift */; };
 		F4F82A0622B40BF9008B5999 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F82A0522B40BF9008B5999 /* UIView.swift */; };
-		F4F82A0822B40CBC008B5999 /* TimeInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F82A0722B40CBC008B5999 /* TimeInterval.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +106,17 @@
 		F41BC31722B5E8C00051090E /* ProjectsDetailDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsDetailDataSource.swift; sourceTree = "<group>"; };
 		F41BC31922B5F0B40051090E /* EducationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EducationModel.swift; sourceTree = "<group>"; };
 		F41BC31B22B5F31F0051090E /* EducationDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EducationDataSource.swift; sourceTree = "<group>"; };
+		F41BC32222B65D0D0051090E /* APIManagerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManagerTest.swift; sourceTree = "<group>"; };
+		F41BC32422B66FDD0051090E /* ImageViewTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewTest.swift; sourceTree = "<group>"; };
+		F41BC32622B6700A0051090E /* ColorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTest.swift; sourceTree = "<group>"; };
+		F41BC32822B670220051090E /* StringTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringTest.swift; sourceTree = "<group>"; };
+		F41BC32A22B670320051090E /* ViewTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewTest.swift; sourceTree = "<group>"; };
+		F41BC32C22B670510051090E /* ViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerTest.swift; sourceTree = "<group>"; };
+		F41BC32E22B6893E0051090E /* HomeViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelTest.swift; sourceTree = "<group>"; };
+		F41BC33022B689590051090E /* ExperienceViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceViewModelTest.swift; sourceTree = "<group>"; };
+		F41BC33222B689690051090E /* SkillsViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillsViewModelTest.swift; sourceTree = "<group>"; };
+		F41BC33422B689770051090E /* ProjectsViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsViewModelTest.swift; sourceTree = "<group>"; };
+		F41BC33622B6899C0051090E /* EducationViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EducationViewModelTest.swift; sourceTree = "<group>"; };
 		F4F829B622B402D7008B5999 /* MyPortfolio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyPortfolio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4F829B922B402D7008B5999 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4F829C022B402D7008B5999 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -104,7 +124,6 @@
 		F4F829C522B402D8008B5999 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F4F829C722B402D8008B5999 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F4F829CC22B402D8008B5999 /* MyPortfolioTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyPortfolioTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F4F829D022B402D8008B5999 /* MyPortfolioTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPortfolioTests.swift; sourceTree = "<group>"; };
 		F4F829D222B402D8008B5999 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F4F829F022B40582008B5999 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		F4F829F222B40690008B5999 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -117,7 +136,6 @@
 		F4F82A0122B40B0B008B5999 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		F4F82A0322B40B9B008B5999 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		F4F82A0522B40BF9008B5999 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
-		F4F82A0722B40CBC008B5999 /* TimeInterval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeInterval.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +212,52 @@
 			path = Projects;
 			sourceTree = "<group>";
 		};
+		F41BC31D22B65C890051090E /* API */ = {
+			isa = PBXGroup;
+			children = (
+				F41BC32222B65D0D0051090E /* APIManagerTest.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		F41BC31E22B65C900051090E /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				F41BC32422B66FDD0051090E /* ImageViewTest.swift */,
+				F41BC32622B6700A0051090E /* ColorTest.swift */,
+				F41BC32822B670220051090E /* StringTest.swift */,
+				F41BC32A22B670320051090E /* ViewTest.swift */,
+				F41BC32C22B670510051090E /* ViewControllerTest.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		F41BC31F22B65C980051090E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F41BC32E22B6893E0051090E /* HomeViewModelTest.swift */,
+				F41BC33022B689590051090E /* ExperienceViewModelTest.swift */,
+				F41BC33222B689690051090E /* SkillsViewModelTest.swift */,
+				F41BC33422B689770051090E /* ProjectsViewModelTest.swift */,
+				F41BC33622B6899C0051090E /* EducationViewModelTest.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F41BC32022B65CAA0051090E /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
+		F41BC32122B65CB60051090E /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		F4F829AD22B402D7008B5999 = {
 			isa = PBXGroup;
 			children = (
@@ -231,7 +295,11 @@
 		F4F829CF22B402D8008B5999 /* MyPortfolioTests */ = {
 			isa = PBXGroup;
 			children = (
-				F4F829D022B402D8008B5999 /* MyPortfolioTests.swift */,
+				F41BC32122B65CB60051090E /* Cell */,
+				F41BC32022B65CAA0051090E /* DataSource */,
+				F41BC31F22B65C980051090E /* ViewModel */,
+				F41BC31E22B65C900051090E /* Extension */,
+				F41BC31D22B65C890051090E /* API */,
 				F4F829D222B402D8008B5999 /* Info.plist */,
 			);
 			path = MyPortfolioTests;
@@ -326,7 +394,6 @@
 				F4F829FE22B40AD9008B5999 /* UIImageView.swift */,
 				F4F82A0322B40B9B008B5999 /* UIColor.swift */,
 				F4F82A0122B40B0B008B5999 /* String.swift */,
-				F4F82A0722B40CBC008B5999 /* TimeInterval.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -495,7 +562,6 @@
 				F4F829BA22B402D7008B5999 /* AppDelegate.swift in Sources */,
 				F41BC31C22B5F31F0051090E /* EducationDataSource.swift in Sources */,
 				F4F829F122B40582008B5999 /* Constants.swift in Sources */,
-				F4F82A0822B40CBC008B5999 /* TimeInterval.swift in Sources */,
 				F4037A7722B443A3000BD673 /* ProjectViewModel.swift in Sources */,
 				F4037A7122B44377000BD673 /* HomeViewModel.swift in Sources */,
 				F4F82A0422B40B9B008B5999 /* UIColor.swift in Sources */,
@@ -514,7 +580,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F4F829D122B402D8008B5999 /* MyPortfolioTests.swift in Sources */,
+				F41BC33322B689690051090E /* SkillsViewModelTest.swift in Sources */,
+				F41BC33522B689770051090E /* ProjectsViewModelTest.swift in Sources */,
+				F41BC32522B66FDD0051090E /* ImageViewTest.swift in Sources */,
+				F41BC33722B6899C0051090E /* EducationViewModelTest.swift in Sources */,
+				F41BC32722B6700A0051090E /* ColorTest.swift in Sources */,
+				F41BC32D22B670510051090E /* ViewControllerTest.swift in Sources */,
+				F41BC32B22B670320051090E /* ViewTest.swift in Sources */,
+				F41BC33122B689590051090E /* ExperienceViewModelTest.swift in Sources */,
+				F41BC32922B670220051090E /* StringTest.swift in Sources */,
+				F41BC32322B65D0D0051090E /* APIManagerTest.swift in Sources */,
+				F41BC32F22B6893E0051090E /* HomeViewModelTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

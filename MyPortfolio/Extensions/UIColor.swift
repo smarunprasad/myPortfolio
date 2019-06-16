@@ -11,9 +11,11 @@ import UIKit
 
 extension UIColor {
     
-    static func getColorFromHexa(aValue: String) -> UIColor {
+    static func getColorFromHexa(aValue: String?) -> UIColor {
         
-        var hexSanitized = aValue.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard let value = aValue else { return UIColor() }
+        
+        var hexSanitized = value.trimmingCharacters(in: .whitespacesAndNewlines)
         hexSanitized = hexSanitized.replacingOccurrences(of: "#", with: "")
         
         var rgb: UInt32 = 0

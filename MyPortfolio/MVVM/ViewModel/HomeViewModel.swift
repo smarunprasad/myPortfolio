@@ -26,7 +26,7 @@ class HomeViewModel {
 
         loadDatafromService { (_ model) in
             
-            if model.ProfessionalSummery != nil {
+            if model.professionalSummery != nil {
            
                 self.professioinalContant = model
             }
@@ -39,7 +39,7 @@ class HomeViewModel {
         if !(APIManager.isConnectedToNetwork()) {
             
             self.alertDelegate?.showOkButtonAlert(message: Constants.Message.noInternet)
-          //  self.reloadDataBlock()
+            self.reloadDataBlock()
             return
         }
         
@@ -49,7 +49,7 @@ class HomeViewModel {
             switch result {
             case .success(let response):
                 
-                if response.ProfessionalSummery != nil {
+                if response.professionalSummery != nil {
                     
                     completionBlock(response)
                 }

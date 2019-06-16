@@ -32,12 +32,12 @@ class SalaryTableViewCell: UITableViewCell {
         
         if salary.type == "Contract" {
             
-            sponsorLabel.isHidden = true
+            sponsorLabel.text = "Visa valid till 2022"
             if let rate = salary.rate { rateLabel.text = "\(rate)/day" }
         }
         else {
             
-            sponsorLabel.isHidden = false
+            sponsorLabel.text = "Sponsorship required"
             if let rate = salary.rate { rateLabel.text = "\(rate)/annum" }
         }
     }

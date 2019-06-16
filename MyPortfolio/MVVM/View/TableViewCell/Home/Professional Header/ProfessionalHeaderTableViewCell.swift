@@ -24,7 +24,7 @@ class ProfessionalHeaderTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         
-        profileImageView.roundCorner(radius: profileImageView.frame.size.width/2 , borderColor: .groupTableViewBackground)
+        profileImageView.roundCorner(radius: profileImageView.frame.size.width/2 , borderColor: .lightGray)
         
     }
     

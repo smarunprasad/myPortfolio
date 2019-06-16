@@ -42,7 +42,6 @@ class EducationViewModel {
             return
         }
         
-        
         APIManager.getEducationData { (success, result) in
             
             switch result {

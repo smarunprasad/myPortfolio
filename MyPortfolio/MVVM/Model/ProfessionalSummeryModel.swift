@@ -36,10 +36,10 @@ struct Professional: Codable {
 
 struct ProfessionalContent: Codable {
     
-    var ProfessionalSummery : ProfessionalSummery?
+    var professionalSummery : ProfessionalSummery?
 
     enum CodingKeys: String, CodingKey {
-        case ProfessionalSummery = "Professional_Summery"
+        case professionalSummery = "Professional_Summery"
     }
 }
 

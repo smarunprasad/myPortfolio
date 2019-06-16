@@ -44,7 +44,7 @@ class HomeViewController: BaseViewController {
         homeViewModel.alertDelegate = self
         homeViewModel.reloadDataBlock = {
             
-            self.homeDataSource.professionalSummery = self.homeViewModel.professioinalContant.ProfessionalSummery ?? ProfessionalSummery()
+            self.homeDataSource.professionalSummery = self.homeViewModel.professioinalContant.professionalSummery ?? ProfessionalSummery()
             self.view.hideLoadingIndicator()
 
             DispatchQueue.main.async {

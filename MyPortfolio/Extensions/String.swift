@@ -13,7 +13,7 @@ extension String {
     
     func openURL(completionBlock: @escaping (Bool) -> Void) {
         
-        guard let url = URL.init(string: self) else {
+        guard let url = URL.init(string: "tel://" + self) else {
             return
         }
         DispatchQueue.main.async {
@@ -22,15 +22,7 @@ extension String {
             })
         }
     }
-    
-    func capitalizingFirstLetter() -> String {
-        
-        return prefix(1).uppercased() + self.dropFirst().lowercased()
-    }
-    
-    func addWhiteSpace() -> String {
-        return "  \(self)"
-    }
+
     func convertDateFormater() -> String {
         
         let dateFormatter = DateFormatter()
