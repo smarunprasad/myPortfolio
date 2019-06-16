@@ -21,6 +21,7 @@ class ExperienceDataSource: NSObject, UITableViewDataSource {
         
         let aCell = tableView.dequeueReusableCell(withIdentifier: ExperienceTableViewCell.identifier) as? ExperienceTableViewCell
         
+        // Passing the value to cell
         aCell?.setupCellWithData(experienceSummery: experienceSummery[indexPath.row])
         return aCell!
     }

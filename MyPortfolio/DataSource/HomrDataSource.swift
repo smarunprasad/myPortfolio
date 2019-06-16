@@ -26,6 +26,7 @@ class HomeDataSource: NSObject, UITableViewDataSource {
         case 0:
             let aCell = tableView.dequeueReusableCell(withIdentifier: ProfessionalHeaderTableViewCell.identifier) as? ProfessionalHeaderTableViewCell
             
+            // Passing the value to cell
             aCell?.setupCellWithData(professionalSummery: professionalSummery)
             return aCell!
             

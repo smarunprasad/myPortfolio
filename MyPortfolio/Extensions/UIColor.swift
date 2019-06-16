@@ -36,9 +36,4 @@ extension UIColor {
         
         return getColorFromHexa(aValue: Constants.Color.primaryColor)
     }
-    
-    static func secondaryColor() -> UIColor {
-        
-        return getColorFromHexa(aValue: Constants.Color.secondaryColor)
-    }
 }

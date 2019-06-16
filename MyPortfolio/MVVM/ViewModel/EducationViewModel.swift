@@ -37,31 +37,36 @@ class EducationViewModel {
         
         if !(APIManager.isConnectedToNetwork()) {
             
-            alertDelegate?.showOkButtonAlert(message: Constants.Message.noInternet)
-            self.reloadDataBlock()
-            return
+            alertDelegate?.showOkButtonAlert(message: Constants.Message.noInternet, completionBlock: {
+                self.reloadDataBlock()
+            })
         }
-        
-        APIManager.getEducationData { (success, result) in
-            
-            switch result {
-            case .success(let response):
+        else {
+            APIManager.getEducationData { (success, result) in
                 
-                if response.education != nil {
+                switch result {
+                case .success(let response):
                     
-                    completionBlock(response)
-                }
-                else {
+                    if response.education != nil {
+                        
+                        completionBlock(response)
+                    }
+                    else {
+                        
+                        completionBlock(EducationContent())
+                        self.alertDelegate?.showOkButtonAlert(message: Constants.Message.somethinWrong, completionBlock: {
+                            self.reloadDataBlock()
+                        })
+                    }
+                    break
+                case .failure:
                     
                     completionBlock(EducationContent())
-                    self.alertDelegate?.showOkButtonAlert(message: Constants.Message.somethinWrong)
+                    self.alertDelegate?.showOkButtonAlert(message: Constants.Message.somethinWrong, completionBlock: {
+                        self.reloadDataBlock()
+                    })
+                    break
                 }
-                break
-            case .failure:
-                
-                completionBlock(EducationContent())
-                self.alertDelegate?.showOkButtonAlert(message: Constants.Message.somethinWrong)
-                break
             }
         }
     }

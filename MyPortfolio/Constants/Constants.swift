@@ -27,7 +27,6 @@ struct Constants {
     struct Color {
         
         static let primaryColor = "000000"
-        static let secondaryColor = "323638"
         
     }
     
@@ -35,25 +34,16 @@ struct Constants {
         
         static let no_profile_image = "icon_no_image"
     }
-    struct userDefaults {
-        
-        static let viewed = "viewed"
-    }
-    
+
     struct Keys {
-        
-        static let title = "title"
-        static let placeholder = "placeholder"
-        static let cancel = "Cancel"
-        static let delete = "delete"
+    
         static let ok = "Ok"
-        static let about = "About the movie"
     }
     
     struct Message {
         
         static let noInternet = "Pease check your network connection"
-        static let delete = "Are you sure to delete?"
+        static let simulator = "Unable to call from the simulator"
         static let somethinWrong = "Something went wrong. Please try again"
     }
     

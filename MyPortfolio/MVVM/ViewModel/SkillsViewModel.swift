@@ -37,31 +37,37 @@ class SkillsViewModel {
         
         if !(APIManager.isConnectedToNetwork()) {
             
-            alertDelegate?.showOkButtonAlert(message: Constants.Message.noInternet)
-            self.reloadDataBlock()
-            return
+            alertDelegate?.showOkButtonAlert(message: Constants.Message.noInternet, completionBlock: {
+                self.reloadDataBlock()
+            })
         }
-        
-        APIManager.getSkillsData { (success, result) in
+        else {
             
-            switch result {
-            case .success(let response):
+            APIManager.getSkillsData { (success, result) in
                 
-                if response.skills != nil {
+                switch result {
+                case .success(let response):
                     
-                    completionBlock(response)
-                }
-                else {
+                    if response.skills != nil {
+                        
+                        completionBlock(response)
+                    }
+                    else {
+                        
+                        completionBlock(SkillsContent())
+                        self.alertDelegate?.showOkButtonAlert(message: Constants.Message.somethinWrong, completionBlock: {
+                            self.reloadDataBlock()
+                        })
+                    }
+                    break
+                case .failure:
                     
                     completionBlock(SkillsContent())
-                    self.alertDelegate?.showOkButtonAlert(message: Constants.Message.somethinWrong)
+                    self.alertDelegate?.showOkButtonAlert(message: Constants.Message.somethinWrong, completionBlock: {
+                        self.reloadDataBlock()
+                    })
+                    break
                 }
-                break
-            case .failure:
-                
-                completionBlock(SkillsContent())
-                self.alertDelegate?.showOkButtonAlert(message: Constants.Message.somethinWrong)
-                break
             }
         }
     }

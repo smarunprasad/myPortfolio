@@ -27,10 +27,19 @@ class HomeViewController: BaseViewController {
         setUpModel()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        
+        self.tabBarController?.navigationItem.title = Constants.Title.home
+        
+        // To call the service if there is no data
+        if homeViewModel.professioinalContant.professionalSummery?.name == nil {
+            homeViewModel.getDataFromService()
+        }
+    }
+    
     func setUpUI() {
         
-        self.navigationItem.title = Constants.Title.home
-        
+        //Setup tableview
         self.tableView.tableFooterView = UIView()
         self.tableView.register(UINib.init(nibName: ProfessionalHeaderTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: ProfessionalHeaderTableViewCell.identifier)
         self.tableView.register(UINib.init(nibName: SalaryTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: SalaryTableViewCell.identifier)
@@ -39,17 +48,26 @@ class HomeViewController: BaseViewController {
     
     func setUpModel() {
 
+        // Init the view model to download the data fro the API and pass back to screen
         self.view.showLoadingIndicator()
-        homeViewModel = HomeViewModel.init()
+        homeViewModel = HomeViewModel()
+        
+        //Setting the alert delegate to show the alert in Base view controller
         homeViewModel.alertDelegate = self
-        homeViewModel.reloadDataBlock = {
+        
+        //get the data from the service
+        homeViewModel.getDataFromService()
+
+        //callBack block to update the view
+        homeViewModel.reloadDataBlock = { [weak self] in
             
-            self.homeDataSource.professionalSummery = self.homeViewModel.professioinalContant.professionalSummery ?? ProfessionalSummery()
-            self.view.hideLoadingIndicator()
+            // Pass the value to the datasouce and relode the table view
+            self?.homeDataSource.professionalSummery = self?.homeViewModel.professioinalContant.professionalSummery ?? ProfessionalSummery()
+            self?.view.hideLoadingIndicator()
 
             DispatchQueue.main.async {
                 
-                self.tableView.reloadData()
+                self?.tableView.reloadData()
             }
         }
     }
@@ -70,6 +88,7 @@ extension HomeViewController: UITableViewDelegate {
         if aCell == nil {
             aCell = UITableViewCell(style: .default, reuseIdentifier: "cell")
         }
+        // seting the section tile based on the data
         switch section {
         case 0:
             return UIView()

@@ -21,6 +21,7 @@ class ProjectsDataSource: NSObject, UITableViewDataSource {
         
         let aCell = tableView.dequeueReusableCell(withIdentifier: ProjectsTableViewCell.identifier) as? ProjectsTableViewCell
         
+        // Passing the value to cell
         aCell?.setupCellWithData(projects: projects[indexPath.row])
         return aCell!
     }

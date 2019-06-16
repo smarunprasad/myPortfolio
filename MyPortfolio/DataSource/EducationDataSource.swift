@@ -24,6 +24,7 @@ class EducationDataSource: NSObject, UITableViewDataSource {
         
         let aCell = tableView.dequeueReusableCell(withIdentifier: ExperienceTableViewCell.identifier) as? ExperienceTableViewCell
         
+        // Using the same ExperienceTableViewCell for the education & certificate data list
         switch indexPath.section {
         case 0:
             if let education = educationContent.education {

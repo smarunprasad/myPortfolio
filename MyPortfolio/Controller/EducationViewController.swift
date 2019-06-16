@@ -29,9 +29,18 @@ class EducationViewController: BaseViewController {
         setUpModel()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        
+        self.tabBarController?.navigationItem.title = Constants.Title.education
+        
+        // To call the service if there is no data
+        if educationViewModel.educationContant.education == nil {
+            educationViewModel.getDataFromService()
+        }
+    }
+    
     func setUpUI() {
         
-        self.navigationItem.title = Constants.Title.experience
         self.tableView.estimatedRowHeight = 100
         self.tableView.rowHeight = UITableView.automaticDimension
         self.tableView.tableFooterView = UIView()
@@ -41,17 +50,26 @@ class EducationViewController: BaseViewController {
     
     func setUpModel() {
         
+        // Init the view model to download the data fro the API and pass back to screen
         self.view.showLoadingIndicator()
-        educationViewModel = EducationViewModel.init()
+        educationViewModel = EducationViewModel()
+        
+        //Setting the alert delegate to show the alert ib Baseview controller
         educationViewModel.alertDelegate = self
-        educationViewModel.reloadDataBlock = {
+        
+        //get the data from the service
+        educationViewModel.getDataFromService()
+        
+        //callBack block to update the view
+        educationViewModel.reloadDataBlock = { [weak self] in
             
-            self.educationDataSource.educationContent = self.educationViewModel.educationContant ?? EducationContent()
-            self.view.hideLoadingIndicator()
+            // Pass the value to the datasouce and relode the table view
+            self?.educationDataSource.educationContent = self?.educationViewModel.educationContant ?? EducationContent()
+            self?.view.hideLoadingIndicator()
             
             DispatchQueue.main.async {
                 
-                self.tableView.reloadData()
+                self?.tableView.reloadData()
             }
         }
         

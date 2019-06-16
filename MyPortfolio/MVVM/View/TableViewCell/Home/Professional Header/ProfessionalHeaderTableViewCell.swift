@@ -18,12 +18,12 @@ class ProfessionalHeaderTableViewCell: UITableViewCell {
     @IBOutlet weak var lastUpdateLabel: UILabel!
     
     static let identifier = "ProfessionalHeaderTableViewCell"
-    
+    var alertDelegate: AlertDelegate?
     var professionalSummery: ProfessionalSummery!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        
         profileImageView.roundCorner(radius: profileImageView.frame.size.width/2 , borderColor: .lightGray)
         
     }
@@ -38,10 +38,12 @@ class ProfessionalHeaderTableViewCell: UITableViewCell {
     @IBAction func callButtonTapped(_ sender: Any) {
         
         let aUrlString = self.professionalSummery.mobile_number
-        aUrlString?.openURL(completionBlock: { (success) in
+        aUrlString?.openURL(completionBlock: { [weak self](success) in
             
             if !(success) {
-                
+                self?.alertDelegate?.showOkButtonAlert(message: Constants.Message.simulator, completionBlock: {
+                    
+                })
             }
         })
     }
@@ -51,9 +53,7 @@ class ProfessionalHeaderTableViewCell: UITableViewCell {
         self.professionalSummery = professionalSummery
         
         //Profile image
-        profileImageView.showLoadingIndicator()
         profileImageView.download(urlString: professionalSummery.profile_picture!, placholderImage: UIImage.init(named: Constants.image.no_profile_image)!) { (success) in
-            self.profileImageView.hideLoadingIndicator()
 
         }
         

@@ -14,7 +14,8 @@ class SkillsViewModelTest: XCTestCase {
     var viewModel: SkillsViewModel!
     override func setUp() {
         
-        viewModel = SkillsViewModel.init()
+        viewModel = SkillsViewModel()
+        viewModel.getDataFromService()
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
     

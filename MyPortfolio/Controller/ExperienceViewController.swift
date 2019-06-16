@@ -27,9 +27,17 @@ class ExperienceViewController: BaseViewController {
         setUpModel()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        
+        self.tabBarController?.navigationItem.title = Constants.Title.experience
+        
+        // To call the service if there is no data
+        if experienceViewModel.experienceContant.experienceSummery == nil {
+            experienceViewModel.getDataFromService()
+        }
+    }
     func setUpUI() {
         
-        self.navigationItem.title = Constants.Title.experience
         self.tableView.estimatedRowHeight = 100
         self.tableView.rowHeight = UITableView.automaticDimension
         self.tableView.tableFooterView = UIView()
@@ -39,17 +47,26 @@ class ExperienceViewController: BaseViewController {
     
     func setUpModel() {
         
+        // Init the view model to download the data fro the API and pass back to screen
         self.view.showLoadingIndicator()
-        experienceViewModel = ExperienceViewModel.init()
+        experienceViewModel = ExperienceViewModel()
+        
+        //Setting the alert delegate to show the alert in Base view controller
         experienceViewModel.alertDelegate = self
-        experienceViewModel.reloadDataBlock = {
+        
+        //get the data from the service
+        experienceViewModel.getDataFromService()
+        
+        //callBack block to update the view
+        experienceViewModel.reloadDataBlock = { [weak self] in
             
-            self.experienceDataSource.experienceSummery = self.experienceViewModel.experienceContant.experienceSummery ?? [ExperienceSummery]()
-            self.view.hideLoadingIndicator()
+            // Pass the value to the datasouce and relode the table view
+            self?.experienceDataSource.experienceSummery = self?.experienceViewModel.experienceContant.experienceSummery ?? [ExperienceSummery]()
+            self?.view.hideLoadingIndicator()
             
             DispatchQueue.main.async {
                 
-                self.tableView.reloadData()
+                self?.tableView.reloadData()
             }
         }
 

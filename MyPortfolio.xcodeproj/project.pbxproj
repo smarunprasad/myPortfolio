@@ -244,20 +244,6 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		F41BC32022B65CAA0051090E /* DataSource */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = DataSource;
-			sourceTree = "<group>";
-		};
-		F41BC32122B65CB60051090E /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Cell;
-			sourceTree = "<group>";
-		};
 		F4F829AD22B402D7008B5999 = {
 			isa = PBXGroup;
 			children = (
@@ -295,8 +281,6 @@
 		F4F829CF22B402D8008B5999 /* MyPortfolioTests */ = {
 			isa = PBXGroup;
 			children = (
-				F41BC32122B65CB60051090E /* Cell */,
-				F41BC32022B65CAA0051090E /* DataSource */,
 				F41BC31F22B65C980051090E /* ViewModel */,
 				F41BC31E22B65C900051090E /* Extension */,
 				F41BC31D22B65C890051090E /* API */,

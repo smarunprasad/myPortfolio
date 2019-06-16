@@ -22,7 +22,6 @@ struct ProfessionalSummeryfiles: Codable {
     
     var professional: Professional?
     
-    
     enum CodingKeys: String, CodingKey {
         case professional = "professional_summery"
     }

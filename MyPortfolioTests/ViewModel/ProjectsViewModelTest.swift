@@ -14,7 +14,8 @@ class ProjectsViewModelTest: XCTestCase {
     var viewModel: ProjectViewModel!
     override func setUp() {
         
-        viewModel = ProjectViewModel.init()
+        viewModel = ProjectViewModel()
+        viewModel.getDataFromService()
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
     

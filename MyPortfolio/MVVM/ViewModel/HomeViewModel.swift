@@ -7,27 +7,27 @@
 //
 
 import Foundation
+import UIKit
 
 class HomeViewModel {
     
-    init() {
-        getDataFromService()
-    }
     var reloadDataBlock: (() -> Void) = {
         
     }
-    
+
+
     var alertDelegate: AlertDelegate?
     var professioinalContant: ProfessionalContent!
+    var baseViewController: BaseViewController!
     
     func getDataFromService() {
         
         self.professioinalContant = ProfessionalContent()
-
+        
         loadDatafromService { (_ model) in
             
             if model.professionalSummery != nil {
-           
+                
                 self.professioinalContant = model
             }
             self.reloadDataBlock()
@@ -38,32 +38,36 @@ class HomeViewModel {
         
         if !(APIManager.isConnectedToNetwork()) {
             
-            self.alertDelegate?.showOkButtonAlert(message: Constants.Message.noInternet)
-            self.reloadDataBlock()
-            return
+            self.alertDelegate?.showOkButtonAlert(message: Constants.Message.noInternet, completionBlock: {
+                self.reloadDataBlock()
+            })
         }
-        
-        
-        APIManager.getProfessionalSummeryData { (success, result) in
+        else {
             
-            switch result {
-            case .success(let response):
+            APIManager.getProfessionalSummeryData { (success, result) in
                 
-                if response.professionalSummery != nil {
+                switch result {
+                case .success(let response):
                     
-                    completionBlock(response)
-                }
-                else {
+                    if response.professionalSummery != nil {
+                        
+                        completionBlock(response)
+                    }
+                    else {
+                        
+                        completionBlock(ProfessionalContent())
+                        self.alertDelegate?.showOkButtonAlert(message: Constants.Message.somethinWrong, completionBlock: {
+                        })
+                    }
+                    break
+                case .failure:
                     
                     completionBlock(ProfessionalContent())
-                    self.alertDelegate?.showOkButtonAlert(message: Constants.Message.somethinWrong)
+                    self.alertDelegate?.showOkButtonAlert(message: Constants.Message.somethinWrong, completionBlock: {
+                    })
+                    
+                    break
                 }
-                break
-            case .failure:
-                
-                completionBlock(ProfessionalContent())
-                self.alertDelegate?.showOkButtonAlert(message: Constants.Message.somethinWrong)
-                break
             }
         }
     }

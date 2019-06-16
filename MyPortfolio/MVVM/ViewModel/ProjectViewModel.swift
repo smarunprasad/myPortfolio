@@ -10,9 +10,6 @@ import Foundation
 
 class ProjectViewModel {
     
-    init() {
-        getDataFromService()
-    }
     var reloadDataBlock: (() -> Void) = {
         
     }
@@ -37,33 +34,36 @@ class ProjectViewModel {
         
         if !(APIManager.isConnectedToNetwork()) {
             
-            alertDelegate?.showOkButtonAlert(message: Constants.Message.noInternet)
-            self.reloadDataBlock()
-            return
+            alertDelegate?.showOkButtonAlert(message: Constants.Message.noInternet, completionBlock: {
+                self.reloadDataBlock()
+            })
         }
-        
-        
-        APIManager.getProjectsData { (success, result) in
-            
-            switch result {
-            case .success(let response):
+        else {
+            APIManager.getProjectsData { (success, result) in
                 
-                if response.projects != nil {
+                switch result {
+                case .success(let response):
                     
-                    completionBlock(response)
-                }
-                else {
+                    if response.projects != nil {
+                        
+                        completionBlock(response)
+                    }
+                    else {
+                        
+                        completionBlock(ProjectsContent())
+                        self.alertDelegate?.showOkButtonAlert(message: Constants.Message.somethinWrong, completionBlock: {
+                            self.reloadDataBlock()
+                        })
+                    }
+                    break
+                case .failure:
                     
                     completionBlock(ProjectsContent())
-                    self.alertDelegate?.showOkButtonAlert(message: Constants.Message.somethinWrong)
+                    self.alertDelegate?.showOkButtonAlert(message: Constants.Message.somethinWrong, completionBlock: {
+                        self.reloadDataBlock()
+                    })
+                    break
                 }
-                break
-            case .failure:
-                
-                completionBlock(ProjectsContent())
-                self.alertDelegate?.showOkButtonAlert(message: Constants.Message.somethinWrong)
-                break
-            }
-        }
+            }}
     }
 }

@@ -30,13 +30,14 @@ class ProjectsDetailViewController:  BaseViewController {
     
     func setUpUI() {
         
-        self.navigationItem.title = Constants.Title.project
+        self.tabBarController?.navigationItem.title = Constants.Title.project
         self.tableView.tableFooterView = UIView()
 
     }
     
     func setUpModel() {
         
+        // Passing the value to the datasource and reloding the tableview
         self.responsibility = project.Responsibility
         self.projectsDetailDataSource.responsibilities = self.responsibility
 

@@ -27,26 +27,44 @@ class SkillsViewController: BaseViewController {
         setUpModel()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        
+        self.tabBarController?.navigationItem.title = Constants.Title.skills
+        
+        // To call the service if there is no data
+        if skillsViewModel.skillsContant.skills == nil {
+            skillsViewModel.getDataFromService()
+        }
+    }
+    
     func setUpUI() {
         
-        self.navigationItem.title = Constants.Title.experience
         self.tableView.tableFooterView = UIView()
 
     }
     
     func setUpModel() {
         
+        // Init the view model to download the data fro the API and pass back to screen
         self.view.showLoadingIndicator()
-        skillsViewModel = SkillsViewModel.init()
+        skillsViewModel = SkillsViewModel()
+        
+        //Setting the alert delegate to show the alert in Base view controller
         skillsViewModel.alertDelegate = self
-        skillsViewModel.reloadDataBlock = {
+        
+        //get the data from the service
+        skillsViewModel.getDataFromService()
+        
+        //callBack block to update the view
+        skillsViewModel.reloadDataBlock = { [weak self] in
             
-            self.skillsDataSource.skills = self.skillsViewModel.skillsContant.skills ?? Skills()
-            self.view.hideLoadingIndicator()
+            // Pass the value to the datasouce and relode the table view
+            self?.skillsDataSource.skills = self?.skillsViewModel.skillsContant.skills ?? Skills()
+            self?.view.hideLoadingIndicator()
             
             DispatchQueue.main.async {
                 
-                self.tableView.reloadData()
+                self?.tableView.reloadData()
             }
         }
     }
@@ -67,6 +85,8 @@ extension SkillsViewController: UITableViewDelegate {
         if aCell == nil {
             aCell = UITableViewCell(style: .default, reuseIdentifier: "cell")
         }
+        
+        // setting the tile for the skills
         switch section {
             
         case 0:

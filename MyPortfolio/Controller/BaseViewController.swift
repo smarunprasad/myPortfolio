@@ -11,7 +11,7 @@ import UIKit
 
 protocol AlertDelegate {
     
-    func showOkButtonAlert(message: String)
+    func showOkButtonAlert(message: String, completionBlock: @escaping ()-> Void)
 }
 
 class BaseViewController: UIViewController {
@@ -25,12 +25,11 @@ class BaseViewController: UIViewController {
 }
 
 extension BaseViewController: AlertDelegate {
-    
-    func showOkButtonAlert(message: String) {
+   
+    func showOkButtonAlert(message: String, completionBlock: @escaping () -> Void) {
         
         self.showAlert(title:Constants.AppName.appName, message: message, OkButtonBlock: {
-          
+            completionBlock()
         })
-        
     }
 }

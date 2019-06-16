@@ -13,10 +13,7 @@ extension String {
     
     func openURL(completionBlock: @escaping (Bool) -> Void) {
         
-        guard let url = URL.init(string: "tel://" + self) else {
-            return
-        }
-        DispatchQueue.main.async {
+        if let url = URL(string: "tel://\(self)") {
             UIApplication.shared.open(url, options: [:], completionHandler: { (success) in
                 completionBlock(success)
             })
