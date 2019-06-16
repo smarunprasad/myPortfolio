@@ -37,6 +37,7 @@ struct Constants {
 
     struct Keys {
     
+        static let cancel = "Cancel"
         static let ok = "Ok"
     }
     

@@ -52,7 +52,7 @@
         <!--Home-->
         <scene sceneID="cOW-wv-eUh">
             <objects>
-                <viewController title="Home" id="gyb-DA-Seb" customClass="HomeViewController" customModule="MyPortfolio" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeViewController" title="Home" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gyb-DA-Seb" customClass="HomeViewController" customModule="MyPortfolio" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JTG-uv-qHp">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -86,7 +86,7 @@
         <!--Education-->
         <scene sceneID="ySm-NB-6ZL">
             <objects>
-                <viewController id="sor-Yc-9hf" customClass="EducationViewController" customModule="MyPortfolio" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EducationViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="sor-Yc-9hf" customClass="EducationViewController" customModule="MyPortfolio" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eyI-pd-jYo">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -120,7 +120,7 @@
         <!--Experience-->
         <scene sceneID="reg-M8-muE">
             <objects>
-                <viewController id="CwD-in-SuQ" customClass="ExperienceViewController" customModule="MyPortfolio" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ExperienceViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="CwD-in-SuQ" customClass="ExperienceViewController" customModule="MyPortfolio" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="T9D-AH-e6d">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -154,7 +154,7 @@
         <!--Skills-->
         <scene sceneID="5pb-P4-FQP">
             <objects>
-                <viewController id="dJY-3R-q9B" customClass="SkillsViewController" customModule="MyPortfolio" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SkillsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="dJY-3R-q9B" customClass="SkillsViewController" customModule="MyPortfolio" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hGe-2J-YOz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -188,7 +188,7 @@
         <!--Projects-->
         <scene sceneID="K02-Kf-YGI">
             <objects>
-                <viewController id="NRg-FA-Xch" customClass="ProjectsViewController" customModule="MyPortfolio" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProjectsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="NRg-FA-Xch" customClass="ProjectsViewController" customModule="MyPortfolio" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GHw-bY-v4S">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

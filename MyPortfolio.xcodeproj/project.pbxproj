@@ -48,6 +48,12 @@
 		F41BC33322B689690051090E /* SkillsViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41BC33222B689690051090E /* SkillsViewModelTest.swift */; };
 		F41BC33522B689770051090E /* ProjectsViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41BC33422B689770051090E /* ProjectsViewModelTest.swift */; };
 		F41BC33722B6899C0051090E /* EducationViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41BC33622B6899C0051090E /* EducationViewModelTest.swift */; };
+		F41BC33C22B6CBCE0051090E /* HomeDataSourceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41BC33B22B6CBCE0051090E /* HomeDataSourceTest.swift */; };
+		F41BC34022B6D7D90051090E /* ExperienceDataSourceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41BC33F22B6D7D90051090E /* ExperienceDataSourceTest.swift */; };
+		F41BC34222B6DA8E0051090E /* SkillsDataSourceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41BC34122B6DA8E0051090E /* SkillsDataSourceTest.swift */; };
+		F41BC34422B6DBF30051090E /* ProjectsDataSourceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41BC34322B6DBF30051090E /* ProjectsDataSourceTest.swift */; };
+		F41BC34622B6DD940051090E /* EducationDataSourceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41BC34522B6DD940051090E /* EducationDataSourceTest.swift */; };
+		F41BC34B22B6E0D20051090E /* ProjectsDetailDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41BC34A22B6E0D20051090E /* ProjectsDetailDataSource.swift */; };
 		F4F829BA22B402D7008B5999 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F829B922B402D7008B5999 /* AppDelegate.swift */; };
 		F4F829C122B402D7008B5999 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4F829BF22B402D7008B5999 /* Main.storyboard */; };
 		F4F829C322B402D8008B5999 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4F829C222B402D8008B5999 /* Assets.xcassets */; };
@@ -117,6 +123,12 @@
 		F41BC33222B689690051090E /* SkillsViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillsViewModelTest.swift; sourceTree = "<group>"; };
 		F41BC33422B689770051090E /* ProjectsViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsViewModelTest.swift; sourceTree = "<group>"; };
 		F41BC33622B6899C0051090E /* EducationViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EducationViewModelTest.swift; sourceTree = "<group>"; };
+		F41BC33B22B6CBCE0051090E /* HomeDataSourceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataSourceTest.swift; sourceTree = "<group>"; };
+		F41BC33F22B6D7D90051090E /* ExperienceDataSourceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceDataSourceTest.swift; sourceTree = "<group>"; };
+		F41BC34122B6DA8E0051090E /* SkillsDataSourceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillsDataSourceTest.swift; sourceTree = "<group>"; };
+		F41BC34322B6DBF30051090E /* ProjectsDataSourceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsDataSourceTest.swift; sourceTree = "<group>"; };
+		F41BC34522B6DD940051090E /* EducationDataSourceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EducationDataSourceTest.swift; sourceTree = "<group>"; };
+		F41BC34A22B6E0D20051090E /* ProjectsDetailDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsDetailDataSource.swift; sourceTree = "<group>"; };
 		F4F829B622B402D7008B5999 /* MyPortfolio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyPortfolio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4F829B922B402D7008B5999 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4F829C022B402D7008B5999 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -244,6 +256,19 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		F41BC33922B6CB8A0051090E /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				F41BC33B22B6CBCE0051090E /* HomeDataSourceTest.swift */,
+				F41BC33F22B6D7D90051090E /* ExperienceDataSourceTest.swift */,
+				F41BC34122B6DA8E0051090E /* SkillsDataSourceTest.swift */,
+				F41BC34322B6DBF30051090E /* ProjectsDataSourceTest.swift */,
+				F41BC34A22B6E0D20051090E /* ProjectsDetailDataSource.swift */,
+				F41BC34522B6DD940051090E /* EducationDataSourceTest.swift */,
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
 		F4F829AD22B402D7008B5999 = {
 			isa = PBXGroup;
 			children = (
@@ -267,13 +292,13 @@
 			children = (
 				F4037A7A22B45D39000BD673 /* API */,
 				F4F829E922B402F6008B5999 /* Launch Delegate */,
+				F4F829DD22B402F5008B5999 /* UIInterface */,
 				F4F829DC22B402F5008B5999 /* Constants */,
 				F4F829E822B402F5008B5999 /* Controller */,
 				F4F829E622B402F5008B5999 /* DataSource */,
 				F4F829E722B402F5008B5999 /* Extensions */,
 				F4F829E222B402F5008B5999 /* MVVM */,
 				F4F829DB22B402F5008B5999 /* SupportFiles */,
-				F4F829DD22B402F5008B5999 /* UIInterface */,
 			);
 			path = MyPortfolio;
 			sourceTree = "<group>";
@@ -281,6 +306,7 @@
 		F4F829CF22B402D8008B5999 /* MyPortfolioTests */ = {
 			isa = PBXGroup;
 			children = (
+				F41BC33922B6CB8A0051090E /* DataSource */,
 				F41BC31F22B65C980051090E /* ViewModel */,
 				F41BC31E22B65C900051090E /* Extension */,
 				F41BC31D22B65C890051090E /* API */,
@@ -566,15 +592,21 @@
 			files = (
 				F41BC33322B689690051090E /* SkillsViewModelTest.swift in Sources */,
 				F41BC33522B689770051090E /* ProjectsViewModelTest.swift in Sources */,
+				F41BC34222B6DA8E0051090E /* SkillsDataSourceTest.swift in Sources */,
+				F41BC34422B6DBF30051090E /* ProjectsDataSourceTest.swift in Sources */,
+				F41BC34B22B6E0D20051090E /* ProjectsDetailDataSource.swift in Sources */,
 				F41BC32522B66FDD0051090E /* ImageViewTest.swift in Sources */,
 				F41BC33722B6899C0051090E /* EducationViewModelTest.swift in Sources */,
 				F41BC32722B6700A0051090E /* ColorTest.swift in Sources */,
 				F41BC32D22B670510051090E /* ViewControllerTest.swift in Sources */,
 				F41BC32B22B670320051090E /* ViewTest.swift in Sources */,
+				F41BC34022B6D7D90051090E /* ExperienceDataSourceTest.swift in Sources */,
 				F41BC33122B689590051090E /* ExperienceViewModelTest.swift in Sources */,
 				F41BC32922B670220051090E /* StringTest.swift in Sources */,
 				F41BC32322B65D0D0051090E /* APIManagerTest.swift in Sources */,
 				F41BC32F22B6893E0051090E /* HomeViewModelTest.swift in Sources */,
+				F41BC33C22B6CBCE0051090E /* HomeDataSourceTest.swift in Sources */,
+				F41BC34622B6DD940051090E /* EducationDataSourceTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -738,7 +770,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = Home.MyPortfolio;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -756,7 +788,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = Home.MyPortfolio;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
