@@ -30,6 +30,8 @@ class HomeViewController: BaseViewController {
     func setUpUI() {
         
         self.navigationItem.title = Constants.Title.home
+        
+        self.tableView.tableFooterView = UIView()
         self.tableView.register(UINib.init(nibName: ProfessionalHeaderTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: ProfessionalHeaderTableViewCell.identifier)
         self.tableView.register(UINib.init(nibName: SalaryTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: SalaryTableViewCell.identifier)
 

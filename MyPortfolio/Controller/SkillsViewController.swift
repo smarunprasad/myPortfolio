@@ -30,6 +30,8 @@ class SkillsViewController: BaseViewController {
     func setUpUI() {
         
         self.navigationItem.title = Constants.Title.experience
+        self.tableView.tableFooterView = UIView()
+
     }
     
     func setUpModel() {

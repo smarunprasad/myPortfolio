@@ -35,6 +35,8 @@
 		F41BC31422B5E5590051090E /* ProjectsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F41BC31222B5E5590051090E /* ProjectsTableViewCell.xib */; };
 		F41BC31622B5E86A0051090E /* ProjectsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41BC31522B5E86A0051090E /* ProjectsDetailViewController.swift */; };
 		F41BC31822B5E8C00051090E /* ProjectsDetailDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41BC31722B5E8C00051090E /* ProjectsDetailDataSource.swift */; };
+		F41BC31A22B5F0B40051090E /* EducationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41BC31922B5F0B40051090E /* EducationModel.swift */; };
+		F41BC31C22B5F31F0051090E /* EducationDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41BC31B22B5F31F0051090E /* EducationDataSource.swift */; };
 		F4F829BA22B402D7008B5999 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F829B922B402D7008B5999 /* AppDelegate.swift */; };
 		F4F829C122B402D7008B5999 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4F829BF22B402D7008B5999 /* Main.storyboard */; };
 		F4F829C322B402D8008B5999 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4F829C222B402D8008B5999 /* Assets.xcassets */; };
@@ -93,6 +95,8 @@
 		F41BC31222B5E5590051090E /* ProjectsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProjectsTableViewCell.xib; sourceTree = "<group>"; };
 		F41BC31522B5E86A0051090E /* ProjectsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsDetailViewController.swift; sourceTree = "<group>"; };
 		F41BC31722B5E8C00051090E /* ProjectsDetailDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsDetailDataSource.swift; sourceTree = "<group>"; };
+		F41BC31922B5F0B40051090E /* EducationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EducationModel.swift; sourceTree = "<group>"; };
+		F41BC31B22B5F31F0051090E /* EducationDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EducationDataSource.swift; sourceTree = "<group>"; };
 		F4F829B622B402D7008B5999 /* MyPortfolio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyPortfolio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4F829B922B402D7008B5999 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4F829C022B402D7008B5999 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -288,6 +292,7 @@
 				F41BC30222B5B6010051090E /* ExperienceSummeryModel.swift */,
 				F41BC30822B5CEF90051090E /* SkillsModel.swift */,
 				F41BC30E22B5E2030051090E /* ProjectsModel.swift */,
+				F41BC31922B5F0B40051090E /* EducationModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -308,6 +313,7 @@
 				F41BC30A22B5D4140051090E /* SkillsDataSource.swift */,
 				F41BC30C22B5E1D30051090E /* ProjectsDataSource.swift */,
 				F41BC31722B5E8C00051090E /* ProjectsDetailDataSource.swift */,
+				F41BC31B22B5F31F0051090E /* EducationDataSource.swift */,
 			);
 			path = DataSource;
 			sourceTree = "<group>";
@@ -484,8 +490,10 @@
 				F4F829FB22B4070C008B5999 /* EducationViewController.swift in Sources */,
 				F4037A8C22B51CB0000BD673 /* ProfessionalHeaderTableViewCell.swift in Sources */,
 				F41BC30922B5CEF90051090E /* SkillsModel.swift in Sources */,
+				F41BC31A22B5F0B40051090E /* EducationModel.swift in Sources */,
 				F41BC30022B5AD680051090E /* ExperienceTableViewCell.swift in Sources */,
 				F4F829BA22B402D7008B5999 /* AppDelegate.swift in Sources */,
+				F41BC31C22B5F31F0051090E /* EducationDataSource.swift in Sources */,
 				F4F829F122B40582008B5999 /* Constants.swift in Sources */,
 				F4F82A0822B40CBC008B5999 /* TimeInterval.swift in Sources */,
 				F4037A7722B443A3000BD673 /* ProjectViewModel.swift in Sources */,

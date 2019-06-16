@@ -31,6 +31,8 @@ class ProjectsDetailViewController:  BaseViewController {
     func setUpUI() {
         
         self.navigationItem.title = Constants.Title.project
+        self.tableView.tableFooterView = UIView()
+
     }
     
     func setUpModel() {

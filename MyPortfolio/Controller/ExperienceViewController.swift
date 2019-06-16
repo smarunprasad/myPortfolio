@@ -32,6 +32,7 @@ class ExperienceViewController: BaseViewController {
         self.navigationItem.title = Constants.Title.experience
         self.tableView.estimatedRowHeight = 100
         self.tableView.rowHeight = UITableView.automaticDimension
+        self.tableView.tableFooterView = UIView()
         self.tableView.register(UINib.init(nibName: ExperienceTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: ExperienceTableViewCell.identifier)
 
     }

@@ -44,6 +44,10 @@ final class APIClient {
                     
                     convertProjectsModelJsonDataToModelBasedOnTheType(jsonData: jsonData, completionBlock: completionBlock)
                 }
+                else if M.self == EducationContent.self {
+                    
+                    convertEducationModelJsonDataToModelBasedOnTheType(jsonData: jsonData, completionBlock: completionBlock)
+                }
                 
             } catch let error as NSError {
                 print("Failed to load: \(error.localizedDescription)")
@@ -96,6 +100,24 @@ func convertSkillsModelJsonDataToModelBasedOnTheType<M: Codable>(jsonData: Data,
         let json = try JSONDecoder().decode(SkillsModel.self, from: jsonData)
         
         if let aData = json.skillsfiles?.skills?.content?.data(using: .utf8) {
+            
+            let json = try JSONDecoder().decode(M.self, from: aData)
+            completionBlock (true, Result.success(json))
+        }
+    }
+    catch {
+        
+        completionBlock (false, Result.failure(HDError.serverSideError))
+    }
+}
+
+
+func convertEducationModelJsonDataToModelBasedOnTheType<M: Codable>(jsonData: Data, completionBlock: @escaping (_ success: Bool, _ result: Result<M,HDError>) -> Void) {
+    
+    do {
+        let json = try JSONDecoder().decode(EducationModel.self, from: jsonData)
+        
+        if let aData = json.educationfiles?.academy?.content?.data(using: .utf8) {
             
             let json = try JSONDecoder().decode(M.self, from: aData)
             completionBlock (true, Result.success(json))
