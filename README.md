@@ -18,6 +18,6 @@ This app allow the user to view my profile on iPhone
     Projects
     Education & certificate
    
-This app support the dynamic font size 
-This is developed using MVVM architecture 
-Test case is writen for ViewModel, Extensiond & API classes
+    This app support the dynamic font size 
+    This is developed using MVVM architecture 
+    Test case is writen for ViewModel, Extensiond & API classes
