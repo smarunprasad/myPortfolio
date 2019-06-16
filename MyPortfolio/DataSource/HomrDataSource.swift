@@ -54,10 +54,5 @@ class HomeDataSource: NSObject, UITableViewDataSource {
             aCell?.setupCellWithData(salary: salary)
             return aCell!
         }
-        
     }
-    
-    
-    
-    
 }

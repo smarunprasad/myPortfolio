@@ -8,10 +8,6 @@
 
 import Foundation
 
-protocol AlertDelegate {
-    
-    func showOkButtonAlert(title: String, message: String)
-}
 class HomeViewModel {
     
     init() {
@@ -21,11 +17,13 @@ class HomeViewModel {
         
     }
     
-    private var alertDelegate: AlertDelegate?
+    var alertDelegate: AlertDelegate?
     var professioinalContant: ProfessionalContent!
     
     func getDataFromService() {
         
+        self.professioinalContant = ProfessionalContent()
+
         loadDatafromService { (_ model) in
             
             if model.ProfessionalSummery != nil {
@@ -40,10 +38,11 @@ class HomeViewModel {
         
         if !(APIManager.isConnectedToNetwork()) {
             
-            alertDelegate?.showOkButtonAlert(title: Constants.AppName.appName, message: Constants.Message.noInternet)
+            self.alertDelegate?.showOkButtonAlert(message: Constants.Message.noInternet)
+          //  self.reloadDataBlock()
+            return
         }
         
-        self.professioinalContant = ProfessionalContent()
         
         APIManager.getProfessionalSummeryData { (success, result) in
             
@@ -57,13 +56,13 @@ class HomeViewModel {
                 else {
                     
                     completionBlock(ProfessionalContent())
-                    self.alertDelegate?.showOkButtonAlert(title: Constants.AppName.appName, message: Constants.Message.somethinWrong)
+                    self.alertDelegate?.showOkButtonAlert(message: Constants.Message.somethinWrong)
                 }
                 break
             case .failure:
                 
                 completionBlock(ProfessionalContent())
-                self.alertDelegate?.showOkButtonAlert(title: Constants.AppName.appName, message: Constants.Message.somethinWrong)
+                self.alertDelegate?.showOkButtonAlert(message: Constants.Message.somethinWrong)
                 break
             }
         }

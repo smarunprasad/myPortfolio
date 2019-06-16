@@ -20,6 +20,7 @@ enum HttpMethode: String {
 enum APIRouter {
     
     case getProfessionalSummeryData
+    case getExperienceSummeryData
 }
 
 extension APIRouter {
@@ -28,13 +29,15 @@ extension APIRouter {
         switch self {
         case .getProfessionalSummeryData:
             return URL.init(string:"\(GistUrl.baseUrl)\(GistUrl.homeUrl)")!
+        case .getExperienceSummeryData:
+            return URL.init(string:"\(GistUrl.baseUrl)\(GistUrl.experienceUrl)")!
+            
         }
     }
     
     private var methode: HttpMethode {
-        switch self {
-        case .getProfessionalSummeryData: return .get
-        }
+     
+        return .get
     }
     
     func asUrlRequest() -> URLRequest {

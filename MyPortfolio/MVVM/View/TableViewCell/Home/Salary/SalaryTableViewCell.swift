@@ -29,17 +29,16 @@ class SalaryTableViewCell: UITableViewCell {
     func setupCellWithData(salary: Salary) {
         
         salaryTypeLabel.text = salary.type
+        
         if salary.type == "Contract" {
-            sponsorLabel.removeFromSuperview()
             
-            if let rate = salary.rate {
-                rateLabel.text = "\(rate)/day"
-            }
+            sponsorLabel.isHidden = true
+            if let rate = salary.rate { rateLabel.text = "\(rate)/day" }
         }
         else {
-            if let rate = salary.rate {
-                rateLabel.text = "\(rate)/annum"
-            }
+            
+            sponsorLabel.isHidden = false
+            if let rate = salary.rate { rateLabel.text = "\(rate)/annum" }
         }
     }
 }

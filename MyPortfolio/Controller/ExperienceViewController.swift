@@ -8,23 +8,49 @@
 
 import UIKit
 
-class ExperienceViewController: UIViewController {
+class ExperienceViewController: BaseViewController {
 
+    var experienceViewModel: ExperienceViewModel!
+    var experienceDataSource = ExperienceDataSource()
+    
+    @IBOutlet weak var tableView: UITableView! {
+        didSet {
+            self.tableView.dataSource = experienceDataSource
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
+        
+        setUpUI()
+        setUpModel()
     }
     
+    func setUpUI() {
+        
+        self.navigationItem.title = Constants.Title.experience
+        self.tableView.estimatedRowHeight = 100
+        self.tableView.rowHeight = UITableView.automaticDimension
+        self.tableView.register(UINib.init(nibName: ExperienceTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: ExperienceTableViewCell.identifier)
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
     }
-    */
+    
+    func setUpModel() {
+        
+        self.view.showLoadingIndicator()
+        experienceViewModel = ExperienceViewModel.init()
+        experienceViewModel.alertDelegate = self
+        experienceViewModel.reloadDataBlock = {
+            
+            self.experienceDataSource.experienceSummery = self.experienceViewModel.experienceContant.experienceSummery ?? [ExperienceSummery]()
+            self.view.hideLoadingIndicator()
+            
+            DispatchQueue.main.async {
+                
+                self.tableView.reloadData()
+            }
+        }
 
+    }
 }

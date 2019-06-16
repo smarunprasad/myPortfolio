@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class HomeViewController: BaseViewController {
 
     var homeViewModel: HomeViewModel!
     var homeDataSource = HomeDataSource()
@@ -29,10 +29,9 @@ class HomeViewController: UIViewController {
     
     func setUpUI() {
         
-        self.title = Constants.Title.home
+        self.navigationItem.title = Constants.Title.home
         self.tableView.register(UINib.init(nibName: ProfessionalHeaderTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: ProfessionalHeaderTableViewCell.identifier)
         self.tableView.register(UINib.init(nibName: SalaryTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: SalaryTableViewCell.identifier)
-        //self.tableView.register(UINib.init(nibName: "cell", bundle: nil), forCellReuseIdentifier: "cell")
 
     }
     
@@ -40,6 +39,7 @@ class HomeViewController: UIViewController {
 
         self.view.showLoadingIndicator()
         homeViewModel = HomeViewModel.init()
+        homeViewModel.alertDelegate = self
         homeViewModel.reloadDataBlock = {
             
             self.homeDataSource.professionalSummery = self.homeViewModel.professioinalContant.ProfessionalSummery ?? ProfessionalSummery()

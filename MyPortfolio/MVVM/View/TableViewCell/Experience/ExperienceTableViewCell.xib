@@ -1,21 +1,95 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13142" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12042"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="ExperienceTableViewCell" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ExperienceTableViewCell" rowHeight="96" id="KGk-i7-Jjw" customClass="ExperienceTableViewCell" customModule="MyPortfolio" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="96"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="95.5"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_no_company" translatesAutoresizingMaskIntoConstraints="NO" id="eeM-t5-rMR">
+                        <rect key="frame" x="12" y="18" width="60" height="60"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="60" id="Igd-g3-zI7"/>
+                            <constraint firstAttribute="width" secondItem="eeM-t5-rMR" secondAttribute="height" multiplier="1:1" id="NpE-HA-M3A"/>
+                        </constraints>
+                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EFP-MC-ZTF">
+                        <rect key="frame" x="80" y="14.5" width="231" height="66.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Senior Mobile Developer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T4W-iO-uuL">
+                                <rect key="frame" x="8" y="0.0" width="215" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="C5F-Hf-w6e"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tavistock Investments PLC" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jbY-Sr-eub">
+                                <rect key="frame" x="8" y="25" width="215" height="18"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="02 Jan, 2019  to 28 Mar, 2019" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rJG-yi-1bC">
+                                <rect key="frame" x="8" y="47" width="215" height="13.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="13.5" id="IQb-nf-Pc5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="T4W-iO-uuL" secondAttribute="trailing" constant="8" id="41I-WS-7mh"/>
+                            <constraint firstItem="jbY-Sr-eub" firstAttribute="top" secondItem="T4W-iO-uuL" secondAttribute="bottom" constant="4" id="GdT-sm-Mof"/>
+                            <constraint firstAttribute="trailing" secondItem="rJG-yi-1bC" secondAttribute="trailing" constant="8" id="Jpg-nG-g4s"/>
+                            <constraint firstAttribute="trailing" secondItem="jbY-Sr-eub" secondAttribute="trailing" constant="8" id="R5O-5x-LGH"/>
+                            <constraint firstItem="rJG-yi-1bC" firstAttribute="top" secondItem="jbY-Sr-eub" secondAttribute="bottom" constant="4" id="VLt-IN-k4j"/>
+                            <constraint firstItem="rJG-yi-1bC" firstAttribute="leading" secondItem="jbY-Sr-eub" secondAttribute="leading" id="fds-vd-UlY"/>
+                            <constraint firstItem="T4W-iO-uuL" firstAttribute="top" secondItem="EFP-MC-ZTF" secondAttribute="top" id="nsD-6i-KJa"/>
+                            <constraint firstAttribute="bottom" secondItem="rJG-yi-1bC" secondAttribute="bottom" constant="6" id="tUg-1R-07o"/>
+                            <constraint firstItem="T4W-iO-uuL" firstAttribute="leading" secondItem="EFP-MC-ZTF" secondAttribute="leading" constant="8" id="yIA-Ek-X7g"/>
+                            <constraint firstItem="jbY-Sr-eub" firstAttribute="leading" secondItem="T4W-iO-uuL" secondAttribute="leading" id="zgT-lt-2wc"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="eeM-t5-rMR" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="D8n-v7-JmR"/>
+                    <constraint firstAttribute="trailing" secondItem="EFP-MC-ZTF" secondAttribute="trailing" constant="9" id="HOn-Q1-c1Z"/>
+                    <constraint firstItem="eeM-t5-rMR" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="JHk-Wp-jlo"/>
+                    <constraint firstItem="EFP-MC-ZTF" firstAttribute="centerY" secondItem="eeM-t5-rMR" secondAttribute="centerY" id="Wls-U2-Sb0"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="eeM-t5-rMR" secondAttribute="bottom" constant="8" id="eji-EA-DuS"/>
+                    <constraint firstItem="EFP-MC-ZTF" firstAttribute="leading" secondItem="eeM-t5-rMR" secondAttribute="trailing" constant="8" id="fLV-Em-p57"/>
+                    <constraint firstItem="EFP-MC-ZTF" firstAttribute="top" relation="greaterThanOrEqual" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="jeI-DH-ML2"/>
+                </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="companyImageView" destination="eeM-t5-rMR" id="bEH-V5-eGy"/>
+                <outlet property="companyNameLabel" destination="jbY-Sr-eub" id="nMZ-i1-EOI"/>
+                <outlet property="durationLabel" destination="rJG-yi-1bC" id="3wF-7r-awT"/>
+                <outlet property="jobTitleLabel" destination="T4W-iO-uuL" id="I1S-O3-fgh"/>
+            </connections>
+            <point key="canvasLocation" x="-72.463768115942031" y="63.616071428571423"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="icon_no_company" width="60" height="60"/>
+    </resources>
 </document>

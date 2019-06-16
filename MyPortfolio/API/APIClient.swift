@@ -30,9 +30,13 @@ final class APIClient {
                 // It is checked to convert the content key value from string to model file
                 if M.self == ProfessionalContent.self {
                     
-                    convertJsonDataToModelBasedOnTheType(jsonData: jsonData, completionBlock: completionBlock)
-                    
+                    convertProfessionalSummeryModelJsonDataToModelBasedOnTheType(jsonData: jsonData, completionBlock: completionBlock)
                 }
+                else if M.self == ExperienceContent.self {
+                    
+                    convertExperienceSummeryModelJsonDataToModelBasedOnTheType(jsonData: jsonData, completionBlock: completionBlock)
+                }
+                
             } catch let error as NSError {
                 print("Failed to load: \(error.localizedDescription)")
             }
@@ -44,12 +48,29 @@ final class APIClient {
 }
 
 
-func convertJsonDataToModelBasedOnTheType<M: Codable>(jsonData: Data, completionBlock: @escaping (_ success: Bool, _ result: Result<M,HDError>) -> Void) {
+func convertProfessionalSummeryModelJsonDataToModelBasedOnTheType<M: Codable>(jsonData: Data, completionBlock: @escaping (_ success: Bool, _ result: Result<M,HDError>) -> Void) {
     
     do {
         let json = try JSONDecoder().decode(ProfessionalSummeryModel.self, from: jsonData)
         
         if let aProfissionData = json.ProfessionalSummeryfiles?.professional?.content?.data(using: .utf8) {
+            
+            let json = try JSONDecoder().decode(M.self, from: aProfissionData)
+            completionBlock (true, Result.success(json))
+        }
+    }
+    catch {
+        
+        completionBlock (false, Result.failure(HDError.serverSideError))
+    }
+}
+
+func convertExperienceSummeryModelJsonDataToModelBasedOnTheType<M: Codable>(jsonData: Data, completionBlock: @escaping (_ success: Bool, _ result: Result<M,HDError>) -> Void) {
+    
+    do {
+        let json = try JSONDecoder().decode(ExperienceSummeryModel.self, from: jsonData)
+        
+        if let aProfissionData = json.ExperienceSummeryfiles?.experience?.content?.data(using: .utf8) {
             
             let json = try JSONDecoder().decode(M.self, from: aProfissionData)
             completionBlock (true, Result.success(json))

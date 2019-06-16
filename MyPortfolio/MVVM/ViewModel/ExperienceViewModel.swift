@@ -7,3 +7,63 @@
 //
 
 import Foundation
+
+class ExperienceViewModel {
+    
+    init() {
+        getDataFromService()
+    }
+    var reloadDataBlock: (() -> Void) = {
+        
+    }
+    
+    var alertDelegate: AlertDelegate?
+    var experienceContant: ExperienceContent!
+    
+    func getDataFromService() {
+        
+        self.experienceContant = ExperienceContent()
+        loadDatafromService { (_ model) in
+            
+            if model.experienceSummery != nil {
+                
+                self.experienceContant = model
+            }
+            self.reloadDataBlock()
+        }
+    }
+    
+    private func loadDatafromService(completionBlock: @escaping (ExperienceContent) -> Void) {
+        
+        if !(APIManager.isConnectedToNetwork()) {
+            
+            alertDelegate?.showOkButtonAlert(message: Constants.Message.noInternet)
+            self.reloadDataBlock()
+            return
+        }
+        
+        
+        APIManager.getExperienceSummeryData { (success, result) in
+            
+            switch result {
+            case .success(let response):
+                
+                if response.experienceSummery != nil {
+                    
+                    completionBlock(response)
+                }
+                else {
+                    
+                    completionBlock(ExperienceContent())
+                    self.alertDelegate?.showOkButtonAlert(message: Constants.Message.somethinWrong)
+                }
+                break
+            case .failure:
+                
+                completionBlock(ExperienceContent())
+                self.alertDelegate?.showOkButtonAlert(message: Constants.Message.somethinWrong)
+                break
+            }
+        }
+    }
+}
