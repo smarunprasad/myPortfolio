@@ -27,6 +27,8 @@
 		F41BC30322B5B6010051090E /* ExperienceSummeryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41BC30222B5B6010051090E /* ExperienceSummeryModel.swift */; };
 		F41BC30522B5BA200051090E /* ExperienceDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41BC30422B5BA200051090E /* ExperienceDataSource.swift */; };
 		F41BC30722B5BC550051090E /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41BC30622B5BC550051090E /* BaseViewController.swift */; };
+		F41BC30922B5CEF90051090E /* SkillsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41BC30822B5CEF90051090E /* SkillsModel.swift */; };
+		F41BC30B22B5D4140051090E /* SkillsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41BC30A22B5D4140051090E /* SkillsDataSource.swift */; };
 		F4F829BA22B402D7008B5999 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F829B922B402D7008B5999 /* AppDelegate.swift */; };
 		F4F829C122B402D7008B5999 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4F829BF22B402D7008B5999 /* Main.storyboard */; };
 		F4F829C322B402D8008B5999 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4F829C222B402D8008B5999 /* Assets.xcassets */; };
@@ -77,6 +79,8 @@
 		F41BC30222B5B6010051090E /* ExperienceSummeryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceSummeryModel.swift; sourceTree = "<group>"; };
 		F41BC30422B5BA200051090E /* ExperienceDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceDataSource.swift; sourceTree = "<group>"; };
 		F41BC30622B5BC550051090E /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		F41BC30822B5CEF90051090E /* SkillsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillsModel.swift; sourceTree = "<group>"; };
+		F41BC30A22B5D4140051090E /* SkillsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillsDataSource.swift; sourceTree = "<group>"; };
 		F4F829B622B402D7008B5999 /* MyPortfolio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyPortfolio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4F829B922B402D7008B5999 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4F829C022B402D7008B5999 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -261,6 +265,7 @@
 			children = (
 				F4037A8422B469FD000BD673 /* ProfessionalSummeryModel.swift */,
 				F41BC30222B5B6010051090E /* ExperienceSummeryModel.swift */,
+				F41BC30822B5CEF90051090E /* SkillsModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -278,6 +283,7 @@
 			children = (
 				F4037A8622B51701000BD673 /* HomrDataSource.swift */,
 				F41BC30422B5BA200051090E /* ExperienceDataSource.swift */,
+				F41BC30A22B5D4140051090E /* SkillsDataSource.swift */,
 			);
 			path = DataSource;
 			sourceTree = "<group>";
@@ -443,8 +449,10 @@
 				F41BC30322B5B6010051090E /* ExperienceSummeryModel.swift in Sources */,
 				F4037A7922B44412000BD673 /* EducationViewModel.swift in Sources */,
 				F4037A8122B46443000BD673 /* APIClient.swift in Sources */,
+				F41BC30B22B5D4140051090E /* SkillsDataSource.swift in Sources */,
 				F4F829FB22B4070C008B5999 /* EducationViewController.swift in Sources */,
 				F4037A8C22B51CB0000BD673 /* ProfessionalHeaderTableViewCell.swift in Sources */,
+				F41BC30922B5CEF90051090E /* SkillsModel.swift in Sources */,
 				F41BC30022B5AD680051090E /* ExperienceTableViewCell.swift in Sources */,
 				F4F829BA22B402D7008B5999 /* AppDelegate.swift in Sources */,
 				F4F829F122B40582008B5999 /* Constants.swift in Sources */,

@@ -36,6 +36,10 @@ final class APIClient {
                     
                     convertExperienceSummeryModelJsonDataToModelBasedOnTheType(jsonData: jsonData, completionBlock: completionBlock)
                 }
+                else if M.self == SkillsContent.self {
+                    
+                    convertSkillsModelJsonDataToModelBasedOnTheType(jsonData: jsonData, completionBlock: completionBlock)
+                }
                 
             } catch let error as NSError {
                 print("Failed to load: \(error.localizedDescription)")
@@ -70,7 +74,24 @@ func convertExperienceSummeryModelJsonDataToModelBasedOnTheType<M: Codable>(json
     do {
         let json = try JSONDecoder().decode(ExperienceSummeryModel.self, from: jsonData)
         
-        if let aProfissionData = json.ExperienceSummeryfiles?.experience?.content?.data(using: .utf8) {
+        if let aProfissionData = json.experienceSummeryfiles?.experience?.content?.data(using: .utf8) {
+            
+            let json = try JSONDecoder().decode(M.self, from: aProfissionData)
+            completionBlock (true, Result.success(json))
+        }
+    }
+    catch {
+        
+        completionBlock (false, Result.failure(HDError.serverSideError))
+    }
+}
+
+func convertSkillsModelJsonDataToModelBasedOnTheType<M: Codable>(jsonData: Data, completionBlock: @escaping (_ success: Bool, _ result: Result<M,HDError>) -> Void) {
+    
+    do {
+        let json = try JSONDecoder().decode(SkillsModel.self, from: jsonData)
+        
+        if let aProfissionData = json.skillsfiles?.skills?.content?.data(using: .utf8) {
             
             let json = try JSONDecoder().decode(M.self, from: aProfissionData)
             completionBlock (true, Result.success(json))

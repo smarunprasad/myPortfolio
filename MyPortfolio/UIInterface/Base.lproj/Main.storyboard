@@ -140,10 +140,28 @@
                     <view key="view" contentMode="scaleToFill" id="hGe-2J-YOz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lLs-y3-d0A">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="delegate" destination="dJY-3R-q9B" id="pkO-aA-Bcp"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="lLs-y3-d0A" firstAttribute="top" secondItem="Upy-hc-uPG" secondAttribute="top" id="5v1-kF-B0f"/>
+                            <constraint firstItem="lLs-y3-d0A" firstAttribute="leading" secondItem="Upy-hc-uPG" secondAttribute="leading" id="83P-on-xlV"/>
+                            <constraint firstItem="Upy-hc-uPG" firstAttribute="trailing" secondItem="lLs-y3-d0A" secondAttribute="trailing" id="Xyp-TV-oaK"/>
+                            <constraint firstItem="Upy-hc-uPG" firstAttribute="bottom" secondItem="lLs-y3-d0A" secondAttribute="bottom" id="aaC-8A-zQM"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Upy-hc-uPG"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Skills" image="skills" springLoaded="YES" id="2wZ-Gd-aYD"/>
+                    <connections>
+                        <outlet property="tableView" destination="lLs-y3-d0A" id="N3X-gY-HIJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ELf-fz-oeq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

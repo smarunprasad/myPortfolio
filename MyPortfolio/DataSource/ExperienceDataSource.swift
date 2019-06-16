@@ -24,8 +24,4 @@ class ExperienceDataSource: NSObject, UITableViewDataSource {
         aCell?.setupCellWithData(experienceSummery: experienceSummery[indexPath.row])
         return aCell!
     }
-    
-    
-    
-    
 }

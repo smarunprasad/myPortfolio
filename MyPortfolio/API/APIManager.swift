@@ -50,5 +50,11 @@ final class APIManager {
         return APIClient.shared.dataRequest(router: .getExperienceSummeryData, completionBlock: completionBlock)
     }
     
+    @discardableResult
+    static func getSkillsData( completionBlock: @escaping (Bool, Result<SkillsContent, HDError>) -> Void) -> URLSessionDataTask {
+        
+        return APIClient.shared.dataRequest(router: .getSkillsData, completionBlock: completionBlock)
+    }
+    
     
 }

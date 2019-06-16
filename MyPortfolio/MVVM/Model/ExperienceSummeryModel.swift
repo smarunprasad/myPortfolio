@@ -11,10 +11,10 @@ import Foundation
 //MARK: To split the data from the Response
 struct ExperienceSummeryModel: Codable {
     
-    var ExperienceSummeryfiles: ExperienceSummeryfiles?
+    var experienceSummeryfiles: ExperienceSummeryfiles?
     
     enum CodingKeys: String, CodingKey {
-        case ExperienceSummeryfiles = "files"
+        case experienceSummeryfiles = "files"
     }
 }
 

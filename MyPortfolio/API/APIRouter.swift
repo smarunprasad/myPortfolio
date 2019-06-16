@@ -21,16 +21,20 @@ enum APIRouter {
     
     case getProfessionalSummeryData
     case getExperienceSummeryData
+    case getSkillsData
 }
 
 extension APIRouter {
     
+    //changing the url based on the router type
     private var url: URL {
         switch self {
         case .getProfessionalSummeryData:
             return URL.init(string:"\(GistUrl.baseUrl)\(GistUrl.homeUrl)")!
         case .getExperienceSummeryData:
             return URL.init(string:"\(GistUrl.baseUrl)\(GistUrl.experienceUrl)")!
+        case .getSkillsData:
+            return URL.init(string:"\(GistUrl.baseUrl)\(GistUrl.skillsUrl)")!
             
         }
     }
