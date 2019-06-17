@@ -39,7 +39,7 @@ class ProjectsViewController:  BaseViewController {
     
     func setUpUI() {
         
-        self.tableView.estimatedRowHeight = 100
+        self.tableView.estimatedRowHeight = 200
         self.tableView.rowHeight = UITableView.automaticDimension
         self.tableView.tableFooterView = UIView()
         self.tableView.register(UINib.init(nibName: ProjectsTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: ProjectsTableViewCell.identifier)

@@ -32,7 +32,7 @@ class ExperienceTableViewCell: UITableViewCell {
     func setupCellWithData(experienceSummery: ExperienceSummery) {
 
         //Profile image
-        companyImageView.download(urlString: experienceSummery.company_image!, placholderImage: UIImage.init(named: Constants.image.no_profile_image)!) { (success) in
+        companyImageView.download(urlString: experienceSummery.company_image!, placholderImage: UIImage.init(named: Constants.image.no_company_image)!) { (success) in
         }
         
         jobTitleLabel.text = experienceSummery.job_title
@@ -43,7 +43,7 @@ class ExperienceTableViewCell: UITableViewCell {
     func setupCellWithEducationData(eduction: Education) {
         
         //Profile image
-        companyImageView.download(urlString: eduction.collage_image!, placholderImage: UIImage.init(named: Constants.image.no_profile_image)!) { (success) in
+        companyImageView.download(urlString: eduction.collage_image!, placholderImage: UIImage.init(named: Constants.image.no_company_image)!) { (success) in
         }
         
         jobTitleLabel.text = eduction.degree
@@ -54,7 +54,7 @@ class ExperienceTableViewCell: UITableViewCell {
     func setupCellWithCertificateData(certificate: Certificate) {
         
         //Profile image
-        companyImageView.download(urlString: certificate.institute_image!, placholderImage: UIImage.init(named: Constants.image.no_profile_image)!) { (success) in
+        companyImageView.download(urlString: certificate.institute_image!, placholderImage: UIImage.init(named: Constants.image.no_company_image)!) { (success) in
         }
         
         jobTitleLabel.text = certificate.certificate_title
