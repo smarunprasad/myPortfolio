@@ -100,7 +100,7 @@ extension HomeViewController: UITableViewDelegate {
             aCell.textLabel?.text =  "Salary"
         }
         aCell.selectionStyle = .none
-        aCell.textLabel?.font =  UIFont.preferredFont(forTextStyle: .subheadline)
+        aCell.textLabel?.font = UIFont.systemFont(ofSize: 14)
         aCell.backgroundColor = .groupTableViewBackground
         
         return aCell

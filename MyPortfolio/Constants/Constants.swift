@@ -32,7 +32,9 @@ struct Constants {
     
     struct image {
         
-        static let no_profile_image = "icon_no_image"
+        static let no_company_image = "icon_no_company"
+        static let no_profile_image = "icon_no_profile"
+        
     }
 
     struct Keys {
